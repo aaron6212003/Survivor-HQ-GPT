@@ -1,0 +1,2849 @@
+{
+  "teams": [
+    {
+      "id": "BUF",
+      "code": "BUF",
+      "name": "Buffalo Bills",
+      "city": "Buffalo",
+      "nickname": "Bills",
+      "conference": "AFC",
+      "division": "East",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
+      "primary_color": "#00338D",
+      "secondary_color": "#C60C30",
+      "bye_week": 12,
+      "wins": 0,
+      "losses": 0,
+      "ties": 0
+    },
+    {
+      "id": "MIA",
+      "code": "MIA",
+      "name": "Miami Dolphins",
+      "city": "Miami",
+      "nickname": "Dolphins",
+      "conference": "AFC",
+      "division": "East",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nfl/500/mia.png",
+      "primary_color": "#008E97",
+      "secondary_color": "#FC4C02",
+      "bye_week": 6,
+      "wins": 0,
+      "losses": 0,
+      "ties": 0
+    },
+    {
+      "id": "NE",
+      "code": "NE",
+      "name": "New England Patriots",
+      "city": "New England",
+      "nickname": "Patriots",
+      "conference": "AFC",
+      "division": "East",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nfl/500/ne.png",
+      "primary_color": "#002244",
+      "secondary_color": "#C60C30",
+      "bye_week": 14,
+      "wins": 0,
+      "losses": 0,
+      "ties": 0
+    },
+    {
+      "id": "NYJ",
+      "code": "NYJ",
+      "name": "New York Jets",
+      "city": "New York",
+      "nickname": "Jets",
+      "conference": "AFC",
+      "division": "East",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png",
+      "primary_color": "#125740",
+      "secondary_color": "#FFFFFF",
+      "bye_week": 12,
+      "wins": 0,
+      "losses": 0,
+      "ties": 0
+    },
+    {
+      "id": "BAL",
+      "code": "BAL",
+      "name": "Baltimore Ravens",
+      "city": "Baltimore",
+      "nickname": "Ravens",
+      "conference": "AFC",
+      "division": "North",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
+      "primary_color": "#241773",
+      "secondary_color": "#000000",
+      "bye_week": 14,
+      "wins": 0,
+      "losses": 0,
+      "ties": 0
+    },
+    {
+      "id": "CIN",
+      "code": "CIN",
+      "name": "Cincinnati Bengals",
+      "city": "Cincinnati",
+      "nickname": "Bengals",
+      "conference": "AFC",
+      "division": "North",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
+      "primary_color": "#FB4F14",
+      "secondary_color": "#000000",
+      "bye_week": 12,
+      "wins": 0,
+      "losses": 0,
+      "ties": 0
+    },
+    {
+      "id": "CLE",
+      "code": "CLE",
+      "name": "Cleveland Browns",
+      "city": "Cleveland",
+      "nickname": "Browns",
+      "conference": "AFC",
+      "division": "North",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
+      "primary_color": "#311D00",
+      "secondary_color": "#FF3C00",
+      "bye_week": 10,
+      "wins": 0,
+      "losses": 0,
+      "ties": 0
+    },
+    {
+      "id": "PIT",
+      "code": "PIT",
+      "name": "Pittsburgh Steelers",
+      "city": "Pittsburgh",
+      "nickname": "Steelers",
+      "conference": "AFC",
+      "division": "North",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+      "primary_color": "#FFB612",
+      "secondary_color": "#101820",
+      "bye_week": 9,
+      "wins": 0,
+      "losses": 0,
+      "ties": 0
+    },
+    {
+      "id": "HOU",
+      "code": "HOU",
+      "name": "Houston Texans",
+      "city": "Houston",
+      "nickname": "Texans",
+      "conference": "AFC",
+      "division": "South",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
+      "primary_color": "#03202F",
+      "secondary_color": "#A71930",
+      "bye_week": 14,
+      "wins": 0,
+      "losses": 0,
+      "ties": 0
+    },
+    {
+      "id": "IND",
+      "code": "IND",
+      "name": "Indianapolis Colts",
+      "city": "Indianapolis",
+      "nickname": "Colts",
+      "conference": "AFC",
+      "division": "South",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
+      "primary_color": "#002C5F",
+      "secondary_color": "#A2AAAD",
+      "bye_week": 14,
+      "wins": 0,
+      "losses": 0,
+      "ties": 0
+    },
+    {
+      "id": "JAX",
+      "code": "JAX",
+      "name": "Jacksonville Jaguars",
+      "city": "Jacksonville",
+      "nickname": "Jaguars",
+      "conference": "AFC",
+      "division": "South",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
+      "primary_color": "#006778",
+      "secondary_color": "#D7A22A",
+      "bye_week": 12,
+      "wins": 0,
+      "losses": 0,
+      "ties": 0
+    },
+    {
+      "id": "TEN",
+      "code": "TEN",
+      "name": "Tennessee Titans",
+      "city": "Tennessee",
+      "nickname": "Titans",
+      "conference": "AFC",
+      "division": "South",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png",
+      "primary_color": "#0C2340",
+      "secondary_color": "#4B92DB",
+      "bye_week": 5,
+      "wins": 0,
+      "losses": 0,
+      "ties": 0
+    },
+    {
+      "id": "DEN",
+      "code": "DEN",
+      "name": "Denver Broncos",
+      "city": "Denver",
+      "nickname": "Broncos",
+      "conference": "AFC",
+      "division": "West",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nfl/500/den.png",
+      "primary_color": "#FB4F14",
+      "secondary_color": "#002244",
+      "bye_week": 14,
+      "wins": 0,
+      "losses": 0,
+      "ties": 0
+    },
+    {
+      "id": "KC",
+      "code": "KC",
+      "name": "Kansas City Chiefs",
+      "city": "Kansas City",
+      "nickname": "Chiefs",
+      "conference": "AFC",
+      "division": "West",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nfl/500/kc.png",
+      "primary_color": "#E31837",
+      "secondary_color": "#FFB81C",
+      "bye_week": 6,
+      "wins": 0,
+      "losses": 0,
+      "ties": 0
+    },
+    {
+      "id": "LV",
+      "code": "LV",
+      "name": "Las Vegas Raiders",
+      "city": "Las Vegas",
+      "nickname": "Raiders",
+      "conference": "AFC",
+      "division": "West",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nfl/500/lv.png",
+      "primary_color": "#000000",
+      "secondary_color": "#A5ACAF",
+      "bye_week": 10,
+      "wins": 0,
+      "losses": 0,
+      "ties": 0
+    },
+    {
+      "id": "LAC",
+      "code": "LAC",
+      "name": "Los Angeles Chargers",
+      "city": "Los Angeles",
+      "nickname": "Chargers",
+      "conference": "AFC",
+      "division": "West",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nfl/500/lac.png",
+      "primary_color": "#0080C6",
+      "secondary_color": "#FFC20E",
+      "bye_week": 5,
+      "wins": 0,
+      "losses": 0,
+      "ties": 0
+    },
+    {
+      "id": "DAL",
+      "code": "DAL",
+      "name": "Dallas Cowboys",
+      "city": "Dallas",
+      "nickname": "Cowboys",
+      "conference": "NFC",
+      "division": "East",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nfl/500/dal.png",
+      "primary_color": "#003594",
+      "secondary_color": "#041E42",
+      "bye_week": 7,
+      "wins": 0,
+      "losses": 0,
+      "ties": 0
+    },
+    {
+      "id": "NYG",
+      "code": "NYG",
+      "name": "New York Giants",
+      "city": "New York",
+      "nickname": "Giants",
+      "conference": "NFC",
+      "division": "East",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
+      "primary_color": "#0B2265",
+      "secondary_color": "#A71930",
+      "bye_week": 11,
+      "wins": 0,
+      "losses": 0,
+      "ties": 0
+    },
+    {
+      "id": "PHI",
+      "code": "PHI",
+      "name": "Philadelphia Eagles",
+      "city": "Philadelphia",
+      "nickname": "Eagles",
+      "conference": "NFC",
+      "division": "East",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png",
+      "primary_color": "#004C54",
+      "secondary_color": "#A5ACAF",
+      "bye_week": 5,
+      "wins": 0,
+      "losses": 0,
+      "ties": 0
+    },
+    {
+      "id": "WAS",
+      "code": "WAS",
+      "name": "Washington Commanders",
+      "city": "Washington",
+      "nickname": "Commanders",
+      "conference": "NFC",
+      "division": "East",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nfl/500/was.png",
+      "primary_color": "#5A1414",
+      "secondary_color": "#FFB612",
+      "bye_week": 14,
+      "wins": 0,
+      "losses": 0,
+      "ties": 0
+    },
+    {
+      "id": "CHI",
+      "code": "CHI",
+      "name": "Chicago Bears",
+      "city": "Chicago",
+      "nickname": "Bears",
+      "conference": "NFC",
+      "division": "North",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
+      "primary_color": "#0B162A",
+      "secondary_color": "#C83803",
+      "bye_week": 7,
+      "wins": 0,
+      "losses": 0,
+      "ties": 0
+    },
+    {
+      "id": "DET",
+      "code": "DET",
+      "name": "Detroit Lions",
+      "city": "Detroit",
+      "nickname": "Lions",
+      "conference": "NFC",
+      "division": "North",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nfl/500/det.png",
+      "primary_color": "#0076B6",
+      "secondary_color": "#B0B7BC",
+      "bye_week": 5,
+      "wins": 0,
+      "losses": 0,
+      "ties": 0
+    },
+    {
+      "id": "GB",
+      "code": "GB",
+      "name": "Green Bay Packers",
+      "city": "Green Bay",
+      "nickname": "Packers",
+      "conference": "NFC",
+      "division": "North",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
+      "primary_color": "#203731",
+      "secondary_color": "#FFB612",
+      "bye_week": 10,
+      "wins": 0,
+      "losses": 0,
+      "ties": 0
+    },
+    {
+      "id": "MIN",
+      "code": "MIN",
+      "name": "Minnesota Vikings",
+      "city": "Minnesota",
+      "nickname": "Vikings",
+      "conference": "NFC",
+      "division": "North",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nfl/500/min.png",
+      "primary_color": "#4F2683",
+      "secondary_color": "#FFC62F",
+      "bye_week": 6,
+      "wins": 0,
+      "losses": 0,
+      "ties": 0
+    },
+    {
+      "id": "ATL",
+      "code": "ATL",
+      "name": "Atlanta Falcons",
+      "city": "Atlanta",
+      "nickname": "Falcons",
+      "conference": "NFC",
+      "division": "South",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
+      "primary_color": "#A71930",
+      "secondary_color": "#000000",
+      "bye_week": 12,
+      "wins": 0,
+      "losses": 0,
+      "ties": 0
+    },
+    {
+      "id": "CAR",
+      "code": "CAR",
+      "name": "Carolina Panthers",
+      "city": "Carolina",
+      "nickname": "Panthers",
+      "conference": "NFC",
+      "division": "South",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nfl/500/car.png",
+      "primary_color": "#0085CA",
+      "secondary_color": "#101820",
+      "bye_week": 11,
+      "wins": 0,
+      "losses": 0,
+      "ties": 0
+    },
+    {
+      "id": "NO",
+      "code": "NO",
+      "name": "New Orleans Saints",
+      "city": "New Orleans",
+      "nickname": "Saints",
+      "conference": "NFC",
+      "division": "South",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nfl/500/no.png",
+      "primary_color": "#D3BC8D",
+      "secondary_color": "#101820",
+      "bye_week": 12,
+      "wins": 0,
+      "losses": 0,
+      "ties": 0
+    },
+    {
+      "id": "TB",
+      "code": "TB",
+      "name": "Tampa Bay Buccaneers",
+      "city": "Tampa Bay",
+      "nickname": "Buccaneers",
+      "conference": "NFC",
+      "division": "South",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nfl/500/tb.png",
+      "primary_color": "#D50A0A",
+      "secondary_color": "#FF7900",
+      "bye_week": 11,
+      "wins": 0,
+      "losses": 0,
+      "ties": 0
+    },
+    {
+      "id": "ARI",
+      "code": "ARI",
+      "name": "Arizona Cardinals",
+      "city": "Arizona",
+      "nickname": "Cardinals",
+      "conference": "NFC",
+      "division": "West",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nfl/500/ari.png",
+      "primary_color": "#97233F",
+      "secondary_color": "#000000",
+      "bye_week": 11,
+      "wins": 0,
+      "losses": 0,
+      "ties": 0
+    },
+    {
+      "id": "LAR",
+      "code": "LAR",
+      "name": "Los Angeles Rams",
+      "city": "Los Angeles",
+      "nickname": "Rams",
+      "conference": "NFC",
+      "division": "West",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nfl/500/lar.png",
+      "primary_color": "#003594",
+      "secondary_color": "#FFA300",
+      "bye_week": 6,
+      "wins": 0,
+      "losses": 0,
+      "ties": 0
+    },
+    {
+      "id": "SF",
+      "code": "SF",
+      "name": "San Francisco 49ers",
+      "city": "San Francisco",
+      "nickname": "49ers",
+      "conference": "NFC",
+      "division": "West",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nfl/500/sf.png",
+      "primary_color": "#AA0000",
+      "secondary_color": "#B3995D",
+      "bye_week": 9,
+      "wins": 0,
+      "losses": 0,
+      "ties": 0
+    },
+    {
+      "id": "SEA",
+      "code": "SEA",
+      "name": "Seattle Seahawks",
+      "city": "Seattle",
+      "nickname": "Seahawks",
+      "conference": "NFC",
+      "division": "West",
+      "logo_url": "https://a.espncdn.com/i/teamlogos/nfl/500/sea.png",
+      "primary_color": "#002244",
+      "secondary_color": "#69BE28",
+      "bye_week": 10,
+      "wins": 0,
+      "losses": 0,
+      "ties": 0
+    }
+  ],
+  "games": [
+    {
+      "id": "G1",
+      "week": 1,
+      "season": 2026,
+      "home_team_id": "LAC",
+      "away_team_id": "ARI",
+      "status": "scheduled"
+    },
+    {
+      "id": "G2",
+      "week": 1,
+      "season": 2026,
+      "home_team_id": "PIT",
+      "away_team_id": "ATL",
+      "status": "scheduled"
+    },
+    {
+      "id": "G3",
+      "week": 1,
+      "season": 2026,
+      "home_team_id": "IND",
+      "away_team_id": "BAL",
+      "status": "scheduled"
+    },
+    {
+      "id": "G4",
+      "week": 1,
+      "season": 2026,
+      "home_team_id": "HOU",
+      "away_team_id": "BUF",
+      "status": "scheduled"
+    },
+    {
+      "id": "G5",
+      "week": 1,
+      "season": 2026,
+      "home_team_id": "CAR",
+      "away_team_id": "CHI",
+      "status": "scheduled"
+    },
+    {
+      "id": "G6",
+      "week": 1,
+      "season": 2026,
+      "home_team_id": "CIN",
+      "away_team_id": "TB",
+      "status": "scheduled"
+    },
+    {
+      "id": "G7",
+      "week": 1,
+      "season": 2026,
+      "home_team_id": "JAX",
+      "away_team_id": "CLE",
+      "status": "scheduled"
+    },
+    {
+      "id": "G8",
+      "week": 1,
+      "season": 2026,
+      "home_team_id": "NYG",
+      "away_team_id": "DAL",
+      "status": "scheduled"
+    },
+    {
+      "id": "G9",
+      "week": 1,
+      "season": 2026,
+      "home_team_id": "KC",
+      "away_team_id": "DEN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G10",
+      "week": 1,
+      "season": 2026,
+      "home_team_id": "DET",
+      "away_team_id": "NO",
+      "status": "scheduled"
+    },
+    {
+      "id": "G11",
+      "week": 1,
+      "season": 2026,
+      "home_team_id": "MIN",
+      "away_team_id": "GB",
+      "status": "scheduled"
+    },
+    {
+      "id": "G12",
+      "week": 1,
+      "season": 2026,
+      "home_team_id": "LV",
+      "away_team_id": "MIA",
+      "status": "scheduled"
+    },
+    {
+      "id": "G13",
+      "week": 1,
+      "season": 2026,
+      "home_team_id": "LAR",
+      "away_team_id": "SF",
+      "status": "scheduled"
+    },
+    {
+      "id": "G14",
+      "week": 1,
+      "season": 2026,
+      "home_team_id": "SEA",
+      "away_team_id": "NE",
+      "status": "scheduled"
+    },
+    {
+      "id": "G15",
+      "week": 1,
+      "season": 2026,
+      "home_team_id": "TEN",
+      "away_team_id": "NYJ",
+      "status": "scheduled"
+    },
+    {
+      "id": "G16",
+      "week": 1,
+      "season": 2026,
+      "home_team_id": "PHI",
+      "away_team_id": "WAS",
+      "status": "scheduled"
+    },
+    {
+      "id": "G17",
+      "week": 1,
+      "season": 2026,
+      "home_team_id": "SF",
+      "away_team_id": "LAR",
+      "status": "scheduled"
+    },
+    {
+      "id": "G18",
+      "week": 2,
+      "season": 2026,
+      "home_team_id": "ARI",
+      "away_team_id": "SEA",
+      "status": "scheduled"
+    },
+    {
+      "id": "G19",
+      "week": 2,
+      "season": 2026,
+      "home_team_id": "ATL",
+      "away_team_id": "CAR",
+      "status": "scheduled"
+    },
+    {
+      "id": "G20",
+      "week": 2,
+      "season": 2026,
+      "home_team_id": "BAL",
+      "away_team_id": "NO",
+      "status": "scheduled"
+    },
+    {
+      "id": "G21",
+      "week": 2,
+      "season": 2026,
+      "home_team_id": "BUF",
+      "away_team_id": "DET",
+      "status": "scheduled"
+    },
+    {
+      "id": "G22",
+      "week": 2,
+      "season": 2026,
+      "home_team_id": "CHI",
+      "away_team_id": "MIN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G23",
+      "week": 2,
+      "season": 2026,
+      "home_team_id": "HOU",
+      "away_team_id": "CIN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G24",
+      "week": 2,
+      "season": 2026,
+      "home_team_id": "TB",
+      "away_team_id": "CLE",
+      "status": "scheduled"
+    },
+    {
+      "id": "G25",
+      "week": 2,
+      "season": 2026,
+      "home_team_id": "DAL",
+      "away_team_id": "WAS",
+      "status": "scheduled"
+    },
+    {
+      "id": "G26",
+      "week": 2,
+      "season": 2026,
+      "home_team_id": "DEN",
+      "away_team_id": "JAX",
+      "status": "scheduled"
+    },
+    {
+      "id": "G27",
+      "week": 2,
+      "season": 2026,
+      "home_team_id": "NYJ",
+      "away_team_id": "GB",
+      "status": "scheduled"
+    },
+    {
+      "id": "G28",
+      "week": 2,
+      "season": 2026,
+      "home_team_id": "KC",
+      "away_team_id": "IND",
+      "status": "scheduled"
+    },
+    {
+      "id": "G29",
+      "week": 2,
+      "season": 2026,
+      "home_team_id": "LAC",
+      "away_team_id": "LV",
+      "status": "scheduled"
+    },
+    {
+      "id": "G30",
+      "week": 2,
+      "season": 2026,
+      "home_team_id": "LAR",
+      "away_team_id": "NYG",
+      "status": "scheduled"
+    },
+    {
+      "id": "G31",
+      "week": 2,
+      "season": 2026,
+      "home_team_id": "SF",
+      "away_team_id": "MIA",
+      "status": "scheduled"
+    },
+    {
+      "id": "G32",
+      "week": 2,
+      "season": 2026,
+      "home_team_id": "NE",
+      "away_team_id": "PIT",
+      "status": "scheduled"
+    },
+    {
+      "id": "G33",
+      "week": 2,
+      "season": 2026,
+      "home_team_id": "TEN",
+      "away_team_id": "PHI",
+      "status": "scheduled"
+    },
+    {
+      "id": "G34",
+      "week": 3,
+      "season": 2026,
+      "home_team_id": "SF",
+      "away_team_id": "ARI",
+      "status": "scheduled"
+    },
+    {
+      "id": "G35",
+      "week": 3,
+      "season": 2026,
+      "home_team_id": "GB",
+      "away_team_id": "ATL",
+      "status": "scheduled"
+    },
+    {
+      "id": "G36",
+      "week": 3,
+      "season": 2026,
+      "home_team_id": "DAL",
+      "away_team_id": "BAL",
+      "status": "scheduled"
+    },
+    {
+      "id": "G37",
+      "week": 3,
+      "season": 2026,
+      "home_team_id": "BUF",
+      "away_team_id": "LAC",
+      "status": "scheduled"
+    },
+    {
+      "id": "G38",
+      "week": 3,
+      "season": 2026,
+      "home_team_id": "CLE",
+      "away_team_id": "CAR",
+      "status": "scheduled"
+    },
+    {
+      "id": "G39",
+      "week": 3,
+      "season": 2026,
+      "home_team_id": "CHI",
+      "away_team_id": "PHI",
+      "status": "scheduled"
+    },
+    {
+      "id": "G40",
+      "week": 3,
+      "season": 2026,
+      "home_team_id": "PIT",
+      "away_team_id": "CIN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G41",
+      "week": 3,
+      "season": 2026,
+      "home_team_id": "DEN",
+      "away_team_id": "LAR",
+      "status": "scheduled"
+    },
+    {
+      "id": "G42",
+      "week": 3,
+      "season": 2026,
+      "home_team_id": "DET",
+      "away_team_id": "NYJ",
+      "status": "scheduled"
+    },
+    {
+      "id": "G43",
+      "week": 3,
+      "season": 2026,
+      "home_team_id": "IND",
+      "away_team_id": "HOU",
+      "status": "scheduled"
+    },
+    {
+      "id": "G44",
+      "week": 3,
+      "season": 2026,
+      "home_team_id": "JAX",
+      "away_team_id": "NE",
+      "status": "scheduled"
+    },
+    {
+      "id": "G45",
+      "week": 3,
+      "season": 2026,
+      "home_team_id": "MIA",
+      "away_team_id": "KC",
+      "status": "scheduled"
+    },
+    {
+      "id": "G46",
+      "week": 3,
+      "season": 2026,
+      "home_team_id": "NO",
+      "away_team_id": "LV",
+      "status": "scheduled"
+    },
+    {
+      "id": "G47",
+      "week": 3,
+      "season": 2026,
+      "home_team_id": "TB",
+      "away_team_id": "MIN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G48",
+      "week": 3,
+      "season": 2026,
+      "home_team_id": "NYG",
+      "away_team_id": "TEN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G49",
+      "week": 3,
+      "season": 2026,
+      "home_team_id": "WAS",
+      "away_team_id": "SEA",
+      "status": "scheduled"
+    },
+    {
+      "id": "G50",
+      "week": 4,
+      "season": 2026,
+      "home_team_id": "NYG",
+      "away_team_id": "ARI",
+      "status": "scheduled"
+    },
+    {
+      "id": "G51",
+      "week": 4,
+      "season": 2026,
+      "home_team_id": "NO",
+      "away_team_id": "ATL",
+      "status": "scheduled"
+    },
+    {
+      "id": "G52",
+      "week": 4,
+      "season": 2026,
+      "home_team_id": "BAL",
+      "away_team_id": "TEN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G53",
+      "week": 4,
+      "season": 2026,
+      "home_team_id": "BUF",
+      "away_team_id": "NE",
+      "status": "scheduled"
+    },
+    {
+      "id": "G54",
+      "week": 4,
+      "season": 2026,
+      "home_team_id": "CAR",
+      "away_team_id": "DET",
+      "status": "scheduled"
+    },
+    {
+      "id": "G55",
+      "week": 4,
+      "season": 2026,
+      "home_team_id": "CHI",
+      "away_team_id": "NYJ",
+      "status": "scheduled"
+    },
+    {
+      "id": "G56",
+      "week": 4,
+      "season": 2026,
+      "home_team_id": "CIN",
+      "away_team_id": "JAX",
+      "status": "scheduled"
+    },
+    {
+      "id": "G57",
+      "week": 4,
+      "season": 2026,
+      "home_team_id": "CLE",
+      "away_team_id": "PIT",
+      "status": "scheduled"
+    },
+    {
+      "id": "G58",
+      "week": 4,
+      "season": 2026,
+      "home_team_id": "HOU",
+      "away_team_id": "DAL",
+      "status": "scheduled"
+    },
+    {
+      "id": "G59",
+      "week": 4,
+      "season": 2026,
+      "home_team_id": "SF",
+      "away_team_id": "DEN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G60",
+      "week": 4,
+      "season": 2026,
+      "home_team_id": "TB",
+      "away_team_id": "GB",
+      "status": "scheduled"
+    },
+    {
+      "id": "G61",
+      "week": 4,
+      "season": 2026,
+      "home_team_id": "IND",
+      "away_team_id": "WAS",
+      "status": "scheduled"
+    },
+    {
+      "id": "G62",
+      "week": 4,
+      "season": 2026,
+      "home_team_id": "LV",
+      "away_team_id": "KC",
+      "status": "scheduled"
+    },
+    {
+      "id": "G63",
+      "week": 4,
+      "season": 2026,
+      "home_team_id": "SEA",
+      "away_team_id": "LAC",
+      "status": "scheduled"
+    },
+    {
+      "id": "G64",
+      "week": 4,
+      "season": 2026,
+      "home_team_id": "PHI",
+      "away_team_id": "LAR",
+      "status": "scheduled"
+    },
+    {
+      "id": "G65",
+      "week": 4,
+      "season": 2026,
+      "home_team_id": "MIN",
+      "away_team_id": "MIA",
+      "status": "scheduled"
+    },
+    {
+      "id": "G66",
+      "week": 4,
+      "season": 2026,
+      "home_team_id": "WAS",
+      "away_team_id": "IND",
+      "status": "scheduled"
+    },
+    {
+      "id": "G67",
+      "week": 5,
+      "season": 2026,
+      "home_team_id": "ARI",
+      "away_team_id": "DET",
+      "status": "scheduled"
+    },
+    {
+      "id": "G68",
+      "week": 5,
+      "season": 2026,
+      "home_team_id": "ATL",
+      "away_team_id": "BAL",
+      "status": "scheduled"
+    },
+    {
+      "id": "G69",
+      "week": 5,
+      "season": 2026,
+      "home_team_id": "LAR",
+      "away_team_id": "BUF",
+      "status": "scheduled"
+    },
+    {
+      "id": "G70",
+      "week": 5,
+      "season": 2026,
+      "home_team_id": "GB",
+      "away_team_id": "CHI",
+      "status": "scheduled"
+    },
+    {
+      "id": "G71",
+      "week": 5,
+      "season": 2026,
+      "home_team_id": "MIA",
+      "away_team_id": "CIN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G72",
+      "week": 5,
+      "season": 2026,
+      "home_team_id": "NYJ",
+      "away_team_id": "CLE",
+      "status": "scheduled"
+    },
+    {
+      "id": "G73",
+      "week": 5,
+      "season": 2026,
+      "home_team_id": "DAL",
+      "away_team_id": "TB",
+      "status": "scheduled"
+    },
+    {
+      "id": "G74",
+      "week": 5,
+      "season": 2026,
+      "home_team_id": "LAC",
+      "away_team_id": "DEN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G75",
+      "week": 5,
+      "season": 2026,
+      "home_team_id": "TEN",
+      "away_team_id": "HOU",
+      "status": "scheduled"
+    },
+    {
+      "id": "G76",
+      "week": 5,
+      "season": 2026,
+      "home_team_id": "PIT",
+      "away_team_id": "IND",
+      "status": "scheduled"
+    },
+    {
+      "id": "G77",
+      "week": 5,
+      "season": 2026,
+      "home_team_id": "JAX",
+      "away_team_id": "PHI",
+      "status": "scheduled"
+    },
+    {
+      "id": "G78",
+      "week": 5,
+      "season": 2026,
+      "home_team_id": "NE",
+      "away_team_id": "LV",
+      "status": "scheduled"
+    },
+    {
+      "id": "G79",
+      "week": 5,
+      "season": 2026,
+      "home_team_id": "NO",
+      "away_team_id": "MIN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G80",
+      "week": 5,
+      "season": 2026,
+      "home_team_id": "WAS",
+      "away_team_id": "NYG",
+      "status": "scheduled"
+    },
+    {
+      "id": "G81",
+      "week": 5,
+      "season": 2026,
+      "home_team_id": "SEA",
+      "away_team_id": "SF",
+      "status": "scheduled"
+    },
+    {
+      "id": "G82",
+      "week": 6,
+      "season": 2026,
+      "home_team_id": "LAR",
+      "away_team_id": "ARI",
+      "status": "scheduled"
+    },
+    {
+      "id": "G83",
+      "week": 6,
+      "season": 2026,
+      "home_team_id": "ATL",
+      "away_team_id": "CHI",
+      "status": "scheduled"
+    },
+    {
+      "id": "G84",
+      "week": 6,
+      "season": 2026,
+      "home_team_id": "CLE",
+      "away_team_id": "BAL",
+      "status": "scheduled"
+    },
+    {
+      "id": "G85",
+      "week": 6,
+      "season": 2026,
+      "home_team_id": "LV",
+      "away_team_id": "BUF",
+      "status": "scheduled"
+    },
+    {
+      "id": "G86",
+      "week": 6,
+      "season": 2026,
+      "home_team_id": "PHI",
+      "away_team_id": "CAR",
+      "status": "scheduled"
+    },
+    {
+      "id": "G87",
+      "week": 6,
+      "season": 2026,
+      "home_team_id": "GB",
+      "away_team_id": "DAL",
+      "status": "scheduled"
+    },
+    {
+      "id": "G88",
+      "week": 6,
+      "season": 2026,
+      "home_team_id": "DEN",
+      "away_team_id": "SEA",
+      "status": "scheduled"
+    },
+    {
+      "id": "G89",
+      "week": 6,
+      "season": 2026,
+      "home_team_id": "HOU",
+      "away_team_id": "JAX",
+      "status": "scheduled"
+    },
+    {
+      "id": "G90",
+      "week": 6,
+      "season": 2026,
+      "home_team_id": "IND",
+      "away_team_id": "TEN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G91",
+      "week": 6,
+      "season": 2026,
+      "home_team_id": "JAX",
+      "away_team_id": "HOU",
+      "status": "scheduled"
+    },
+    {
+      "id": "G92",
+      "week": 6,
+      "season": 2026,
+      "home_team_id": "KC",
+      "away_team_id": "LAC",
+      "status": "scheduled"
+    },
+    {
+      "id": "G93",
+      "week": 6,
+      "season": 2026,
+      "home_team_id": "NE",
+      "away_team_id": "NYJ",
+      "status": "scheduled"
+    },
+    {
+      "id": "G94",
+      "week": 6,
+      "season": 2026,
+      "home_team_id": "NYG",
+      "away_team_id": "NO",
+      "status": "scheduled"
+    },
+    {
+      "id": "G95",
+      "week": 6,
+      "season": 2026,
+      "home_team_id": "TB",
+      "away_team_id": "PIT",
+      "status": "scheduled"
+    },
+    {
+      "id": "G96",
+      "week": 6,
+      "season": 2026,
+      "home_team_id": "SF",
+      "away_team_id": "WAS",
+      "status": "scheduled"
+    },
+    {
+      "id": "G97",
+      "week": 7,
+      "season": 2026,
+      "home_team_id": "ARI",
+      "away_team_id": "DEN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G98",
+      "week": 7,
+      "season": 2026,
+      "home_team_id": "ATL",
+      "away_team_id": "SF",
+      "status": "scheduled"
+    },
+    {
+      "id": "G99",
+      "week": 7,
+      "season": 2026,
+      "home_team_id": "BAL",
+      "away_team_id": "CIN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G100",
+      "week": 7,
+      "season": 2026,
+      "home_team_id": "CAR",
+      "away_team_id": "TB",
+      "status": "scheduled"
+    },
+    {
+      "id": "G101",
+      "week": 7,
+      "season": 2026,
+      "home_team_id": "CHI",
+      "away_team_id": "NE",
+      "status": "scheduled"
+    },
+    {
+      "id": "G102",
+      "week": 7,
+      "season": 2026,
+      "home_team_id": "TEN",
+      "away_team_id": "CLE",
+      "status": "scheduled"
+    },
+    {
+      "id": "G103",
+      "week": 7,
+      "season": 2026,
+      "home_team_id": "PHI",
+      "away_team_id": "DAL",
+      "status": "scheduled"
+    },
+    {
+      "id": "G104",
+      "week": 7,
+      "season": 2026,
+      "home_team_id": "DET",
+      "away_team_id": "GB",
+      "status": "scheduled"
+    },
+    {
+      "id": "G105",
+      "week": 7,
+      "season": 2026,
+      "home_team_id": "HOU",
+      "away_team_id": "NYG",
+      "status": "scheduled"
+    },
+    {
+      "id": "G106",
+      "week": 7,
+      "season": 2026,
+      "home_team_id": "MIN",
+      "away_team_id": "IND",
+      "status": "scheduled"
+    },
+    {
+      "id": "G107",
+      "week": 7,
+      "season": 2026,
+      "home_team_id": "SEA",
+      "away_team_id": "KC",
+      "status": "scheduled"
+    },
+    {
+      "id": "G108",
+      "week": 7,
+      "season": 2026,
+      "home_team_id": "LV",
+      "away_team_id": "LAR",
+      "status": "scheduled"
+    },
+    {
+      "id": "G109",
+      "week": 7,
+      "season": 2026,
+      "home_team_id": "NYJ",
+      "away_team_id": "MIA",
+      "status": "scheduled"
+    },
+    {
+      "id": "G110",
+      "week": 7,
+      "season": 2026,
+      "home_team_id": "NO",
+      "away_team_id": "PIT",
+      "status": "scheduled"
+    },
+    {
+      "id": "G111",
+      "week": 7,
+      "season": 2026,
+      "home_team_id": "PIT",
+      "away_team_id": "NO",
+      "status": "scheduled"
+    },
+    {
+      "id": "G112",
+      "week": 8,
+      "season": 2026,
+      "home_team_id": "DAL",
+      "away_team_id": "ARI",
+      "status": "scheduled"
+    },
+    {
+      "id": "G113",
+      "week": 8,
+      "season": 2026,
+      "home_team_id": "TB",
+      "away_team_id": "ATL",
+      "status": "scheduled"
+    },
+    {
+      "id": "G114",
+      "week": 8,
+      "season": 2026,
+      "home_team_id": "BUF",
+      "away_team_id": "BAL",
+      "status": "scheduled"
+    },
+    {
+      "id": "G115",
+      "week": 8,
+      "season": 2026,
+      "home_team_id": "GB",
+      "away_team_id": "CAR",
+      "status": "scheduled"
+    },
+    {
+      "id": "G116",
+      "week": 8,
+      "season": 2026,
+      "home_team_id": "SEA",
+      "away_team_id": "CHI",
+      "status": "scheduled"
+    },
+    {
+      "id": "G117",
+      "week": 8,
+      "season": 2026,
+      "home_team_id": "CIN",
+      "away_team_id": "TEN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G118",
+      "week": 8,
+      "season": 2026,
+      "home_team_id": "PIT",
+      "away_team_id": "CLE",
+      "status": "scheduled"
+    },
+    {
+      "id": "G119",
+      "week": 8,
+      "season": 2026,
+      "home_team_id": "DEN",
+      "away_team_id": "KC",
+      "status": "scheduled"
+    },
+    {
+      "id": "G120",
+      "week": 8,
+      "season": 2026,
+      "home_team_id": "DET",
+      "away_team_id": "MIN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G121",
+      "week": 8,
+      "season": 2026,
+      "home_team_id": "JAX",
+      "away_team_id": "IND",
+      "status": "scheduled"
+    },
+    {
+      "id": "G122",
+      "week": 8,
+      "season": 2026,
+      "home_team_id": "NYJ",
+      "away_team_id": "LV",
+      "status": "scheduled"
+    },
+    {
+      "id": "G123",
+      "week": 8,
+      "season": 2026,
+      "home_team_id": "LAR",
+      "away_team_id": "LAC",
+      "status": "scheduled"
+    },
+    {
+      "id": "G124",
+      "week": 8,
+      "season": 2026,
+      "home_team_id": "MIA",
+      "away_team_id": "NE",
+      "status": "scheduled"
+    },
+    {
+      "id": "G125",
+      "week": 8,
+      "season": 2026,
+      "home_team_id": "WAS",
+      "away_team_id": "PHI",
+      "status": "scheduled"
+    },
+    {
+      "id": "G126",
+      "week": 9,
+      "season": 2026,
+      "home_team_id": "SEA",
+      "away_team_id": "ARI",
+      "status": "scheduled"
+    },
+    {
+      "id": "G127",
+      "week": 9,
+      "season": 2026,
+      "home_team_id": "ATL",
+      "away_team_id": "CIN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G128",
+      "week": 9,
+      "season": 2026,
+      "home_team_id": "BAL",
+      "away_team_id": "JAX",
+      "status": "scheduled"
+    },
+    {
+      "id": "G129",
+      "week": 9,
+      "season": 2026,
+      "home_team_id": "MIN",
+      "away_team_id": "BUF",
+      "status": "scheduled"
+    },
+    {
+      "id": "G130",
+      "week": 9,
+      "season": 2026,
+      "home_team_id": "CAR",
+      "away_team_id": "DEN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G131",
+      "week": 9,
+      "season": 2026,
+      "home_team_id": "CHI",
+      "away_team_id": "TB",
+      "status": "scheduled"
+    },
+    {
+      "id": "G132",
+      "week": 9,
+      "season": 2026,
+      "home_team_id": "CIN",
+      "away_team_id": "ATL",
+      "status": "scheduled"
+    },
+    {
+      "id": "G133",
+      "week": 9,
+      "season": 2026,
+      "home_team_id": "NO",
+      "away_team_id": "CLE",
+      "status": "scheduled"
+    },
+    {
+      "id": "G134",
+      "week": 9,
+      "season": 2026,
+      "home_team_id": "IND",
+      "away_team_id": "DAL",
+      "status": "scheduled"
+    },
+    {
+      "id": "G135",
+      "week": 9,
+      "season": 2026,
+      "home_team_id": "MIA",
+      "away_team_id": "DET",
+      "status": "scheduled"
+    },
+    {
+      "id": "G136",
+      "week": 9,
+      "season": 2026,
+      "home_team_id": "NE",
+      "away_team_id": "GB",
+      "status": "scheduled"
+    },
+    {
+      "id": "G137",
+      "week": 9,
+      "season": 2026,
+      "home_team_id": "LAC",
+      "away_team_id": "HOU",
+      "status": "scheduled"
+    },
+    {
+      "id": "G138",
+      "week": 9,
+      "season": 2026,
+      "home_team_id": "KC",
+      "away_team_id": "NYJ",
+      "status": "scheduled"
+    },
+    {
+      "id": "G139",
+      "week": 9,
+      "season": 2026,
+      "home_team_id": "SF",
+      "away_team_id": "LV",
+      "status": "scheduled"
+    },
+    {
+      "id": "G140",
+      "week": 9,
+      "season": 2026,
+      "home_team_id": "WAS",
+      "away_team_id": "LAR",
+      "status": "scheduled"
+    },
+    {
+      "id": "G141",
+      "week": 9,
+      "season": 2026,
+      "home_team_id": "PHI",
+      "away_team_id": "NYG",
+      "status": "scheduled"
+    },
+    {
+      "id": "G142",
+      "week": 10,
+      "season": 2026,
+      "home_team_id": "ARI",
+      "away_team_id": "LAR",
+      "status": "scheduled"
+    },
+    {
+      "id": "G143",
+      "week": 10,
+      "season": 2026,
+      "home_team_id": "ATL",
+      "away_team_id": "KC",
+      "status": "scheduled"
+    },
+    {
+      "id": "G144",
+      "week": 10,
+      "season": 2026,
+      "home_team_id": "BAL",
+      "away_team_id": "LAC",
+      "status": "scheduled"
+    },
+    {
+      "id": "G145",
+      "week": 10,
+      "season": 2026,
+      "home_team_id": "NYJ",
+      "away_team_id": "BUF",
+      "status": "scheduled"
+    },
+    {
+      "id": "G146",
+      "week": 10,
+      "season": 2026,
+      "home_team_id": "NO",
+      "away_team_id": "CAR",
+      "status": "scheduled"
+    },
+    {
+      "id": "G147",
+      "week": 10,
+      "season": 2026,
+      "home_team_id": "CIN",
+      "away_team_id": "PIT",
+      "status": "scheduled"
+    },
+    {
+      "id": "G148",
+      "week": 10,
+      "season": 2026,
+      "home_team_id": "CLE",
+      "away_team_id": "HOU",
+      "status": "scheduled"
+    },
+    {
+      "id": "G149",
+      "week": 10,
+      "season": 2026,
+      "home_team_id": "DAL",
+      "away_team_id": "SF",
+      "status": "scheduled"
+    },
+    {
+      "id": "G150",
+      "week": 10,
+      "season": 2026,
+      "home_team_id": "DET",
+      "away_team_id": "NE",
+      "status": "scheduled"
+    },
+    {
+      "id": "G151",
+      "week": 10,
+      "season": 2026,
+      "home_team_id": "GB",
+      "away_team_id": "MIN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G152",
+      "week": 10,
+      "season": 2026,
+      "home_team_id": "IND",
+      "away_team_id": "MIA",
+      "status": "scheduled"
+    },
+    {
+      "id": "G153",
+      "week": 10,
+      "season": 2026,
+      "home_team_id": "TEN",
+      "away_team_id": "JAX",
+      "status": "scheduled"
+    },
+    {
+      "id": "G154",
+      "week": 10,
+      "season": 2026,
+      "home_team_id": "LV",
+      "away_team_id": "SEA",
+      "status": "scheduled"
+    },
+    {
+      "id": "G155",
+      "week": 10,
+      "season": 2026,
+      "home_team_id": "NE",
+      "away_team_id": "DET",
+      "status": "scheduled"
+    },
+    {
+      "id": "G156",
+      "week": 10,
+      "season": 2026,
+      "home_team_id": "NYG",
+      "away_team_id": "WAS",
+      "status": "scheduled"
+    },
+    {
+      "id": "G157",
+      "week": 11,
+      "season": 2026,
+      "home_team_id": "KC",
+      "away_team_id": "ARI",
+      "status": "scheduled"
+    },
+    {
+      "id": "G158",
+      "week": 11,
+      "season": 2026,
+      "home_team_id": "CAR",
+      "away_team_id": "BAL",
+      "status": "scheduled"
+    },
+    {
+      "id": "G159",
+      "week": 11,
+      "season": 2026,
+      "home_team_id": "BUF",
+      "away_team_id": "MIA",
+      "status": "scheduled"
+    },
+    {
+      "id": "G160",
+      "week": 11,
+      "season": 2026,
+      "home_team_id": "CHI",
+      "away_team_id": "NO",
+      "status": "scheduled"
+    },
+    {
+      "id": "G161",
+      "week": 11,
+      "season": 2026,
+      "home_team_id": "WAS",
+      "away_team_id": "CIN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G162",
+      "week": 11,
+      "season": 2026,
+      "home_team_id": "DAL",
+      "away_team_id": "TEN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G163",
+      "week": 11,
+      "season": 2026,
+      "home_team_id": "DEN",
+      "away_team_id": "LV",
+      "status": "scheduled"
+    },
+    {
+      "id": "G164",
+      "week": 11,
+      "season": 2026,
+      "home_team_id": "DET",
+      "away_team_id": "TB",
+      "status": "scheduled"
+    },
+    {
+      "id": "G165",
+      "week": 11,
+      "season": 2026,
+      "home_team_id": "HOU",
+      "away_team_id": "IND",
+      "status": "scheduled"
+    },
+    {
+      "id": "G166",
+      "week": 11,
+      "season": 2026,
+      "home_team_id": "NYG",
+      "away_team_id": "JAX",
+      "status": "scheduled"
+    },
+    {
+      "id": "G167",
+      "week": 11,
+      "season": 2026,
+      "home_team_id": "LAC",
+      "away_team_id": "NYJ",
+      "status": "scheduled"
+    },
+    {
+      "id": "G168",
+      "week": 11,
+      "season": 2026,
+      "home_team_id": "MIN",
+      "away_team_id": "SF",
+      "status": "scheduled"
+    },
+    {
+      "id": "G169",
+      "week": 11,
+      "season": 2026,
+      "home_team_id": "PHI",
+      "away_team_id": "PIT",
+      "status": "scheduled"
+    },
+    {
+      "id": "G170",
+      "week": 11,
+      "season": 2026,
+      "home_team_id": "SF",
+      "away_team_id": "MIN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G171",
+      "week": 12,
+      "season": 2026,
+      "home_team_id": "ARI",
+      "away_team_id": "WAS",
+      "status": "scheduled"
+    },
+    {
+      "id": "G172",
+      "week": 12,
+      "season": 2026,
+      "home_team_id": "MIN",
+      "away_team_id": "ATL",
+      "status": "scheduled"
+    },
+    {
+      "id": "G173",
+      "week": 12,
+      "season": 2026,
+      "home_team_id": "HOU",
+      "away_team_id": "BAL",
+      "status": "scheduled"
+    },
+    {
+      "id": "G174",
+      "week": 12,
+      "season": 2026,
+      "home_team_id": "BUF",
+      "away_team_id": "KC",
+      "status": "scheduled"
+    },
+    {
+      "id": "G175",
+      "week": 12,
+      "season": 2026,
+      "home_team_id": "TB",
+      "away_team_id": "CAR",
+      "status": "scheduled"
+    },
+    {
+      "id": "G176",
+      "week": 12,
+      "season": 2026,
+      "home_team_id": "DET",
+      "away_team_id": "CHI",
+      "status": "scheduled"
+    },
+    {
+      "id": "G177",
+      "week": 12,
+      "season": 2026,
+      "home_team_id": "CIN",
+      "away_team_id": "NO",
+      "status": "scheduled"
+    },
+    {
+      "id": "G178",
+      "week": 12,
+      "season": 2026,
+      "home_team_id": "CLE",
+      "away_team_id": "LV",
+      "status": "scheduled"
+    },
+    {
+      "id": "G179",
+      "week": 12,
+      "season": 2026,
+      "home_team_id": "DAL",
+      "away_team_id": "PHI",
+      "status": "scheduled"
+    },
+    {
+      "id": "G180",
+      "week": 12,
+      "season": 2026,
+      "home_team_id": "PIT",
+      "away_team_id": "DEN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G181",
+      "week": 12,
+      "season": 2026,
+      "home_team_id": "LAR",
+      "away_team_id": "GB",
+      "status": "scheduled"
+    },
+    {
+      "id": "G182",
+      "week": 12,
+      "season": 2026,
+      "home_team_id": "IND",
+      "away_team_id": "NYG",
+      "status": "scheduled"
+    },
+    {
+      "id": "G183",
+      "week": 12,
+      "season": 2026,
+      "home_team_id": "JAX",
+      "away_team_id": "TEN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G184",
+      "week": 12,
+      "season": 2026,
+      "home_team_id": "LAC",
+      "away_team_id": "NE",
+      "status": "scheduled"
+    },
+    {
+      "id": "G185",
+      "week": 12,
+      "season": 2026,
+      "home_team_id": "MIA",
+      "away_team_id": "NYJ",
+      "status": "scheduled"
+    },
+    {
+      "id": "G186",
+      "week": 12,
+      "season": 2026,
+      "home_team_id": "SF",
+      "away_team_id": "SEA",
+      "status": "scheduled"
+    },
+    {
+      "id": "G187",
+      "week": 13,
+      "season": 2026,
+      "home_team_id": "ARI",
+      "away_team_id": "PHI",
+      "status": "scheduled"
+    },
+    {
+      "id": "G188",
+      "week": 13,
+      "season": 2026,
+      "home_team_id": "ATL",
+      "away_team_id": "DET",
+      "status": "scheduled"
+    },
+    {
+      "id": "G189",
+      "week": 13,
+      "season": 2026,
+      "home_team_id": "NE",
+      "away_team_id": "BUF",
+      "status": "scheduled"
+    },
+    {
+      "id": "G190",
+      "week": 13,
+      "season": 2026,
+      "home_team_id": "MIN",
+      "away_team_id": "CAR",
+      "status": "scheduled"
+    },
+    {
+      "id": "G191",
+      "week": 13,
+      "season": 2026,
+      "home_team_id": "CHI",
+      "away_team_id": "JAX",
+      "status": "scheduled"
+    },
+    {
+      "id": "G192",
+      "week": 13,
+      "season": 2026,
+      "home_team_id": "CLE",
+      "away_team_id": "CIN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G193",
+      "week": 13,
+      "season": 2026,
+      "home_team_id": "SEA",
+      "away_team_id": "DAL",
+      "status": "scheduled"
+    },
+    {
+      "id": "G194",
+      "week": 13,
+      "season": 2026,
+      "home_team_id": "DEN",
+      "away_team_id": "MIA",
+      "status": "scheduled"
+    },
+    {
+      "id": "G195",
+      "week": 13,
+      "season": 2026,
+      "home_team_id": "NO",
+      "away_team_id": "GB",
+      "status": "scheduled"
+    },
+    {
+      "id": "G196",
+      "week": 13,
+      "season": 2026,
+      "home_team_id": "PIT",
+      "away_team_id": "HOU",
+      "status": "scheduled"
+    },
+    {
+      "id": "G197",
+      "week": 13,
+      "season": 2026,
+      "home_team_id": "LAR",
+      "away_team_id": "KC",
+      "status": "scheduled"
+    },
+    {
+      "id": "G198",
+      "week": 13,
+      "season": 2026,
+      "home_team_id": "TB",
+      "away_team_id": "LAC",
+      "status": "scheduled"
+    },
+    {
+      "id": "G199",
+      "week": 13,
+      "season": 2026,
+      "home_team_id": "NYG",
+      "away_team_id": "SF",
+      "status": "scheduled"
+    },
+    {
+      "id": "G200",
+      "week": 13,
+      "season": 2026,
+      "home_team_id": "TEN",
+      "away_team_id": "WAS",
+      "status": "scheduled"
+    },
+    {
+      "id": "G201",
+      "week": 14,
+      "season": 2026,
+      "home_team_id": "CLE",
+      "away_team_id": "ATL",
+      "status": "scheduled"
+    },
+    {
+      "id": "G202",
+      "week": 14,
+      "season": 2026,
+      "home_team_id": "BAL",
+      "away_team_id": "TB",
+      "status": "scheduled"
+    },
+    {
+      "id": "G203",
+      "week": 14,
+      "season": 2026,
+      "home_team_id": "GB",
+      "away_team_id": "BUF",
+      "status": "scheduled"
+    },
+    {
+      "id": "G204",
+      "week": 14,
+      "season": 2026,
+      "home_team_id": "CAR",
+      "away_team_id": "NO",
+      "status": "scheduled"
+    },
+    {
+      "id": "G205",
+      "week": 14,
+      "season": 2026,
+      "home_team_id": "MIA",
+      "away_team_id": "CHI",
+      "status": "scheduled"
+    },
+    {
+      "id": "G206",
+      "week": 14,
+      "season": 2026,
+      "home_team_id": "CIN",
+      "away_team_id": "KC",
+      "status": "scheduled"
+    },
+    {
+      "id": "G207",
+      "week": 14,
+      "season": 2026,
+      "home_team_id": "NYJ",
+      "away_team_id": "DEN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G208",
+      "week": 14,
+      "season": 2026,
+      "home_team_id": "DET",
+      "away_team_id": "TEN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G209",
+      "week": 14,
+      "season": 2026,
+      "home_team_id": "WAS",
+      "away_team_id": "HOU",
+      "status": "scheduled"
+    },
+    {
+      "id": "G210",
+      "week": 14,
+      "season": 2026,
+      "home_team_id": "PHI",
+      "away_team_id": "IND",
+      "status": "scheduled"
+    },
+    {
+      "id": "G211",
+      "week": 14,
+      "season": 2026,
+      "home_team_id": "JAX",
+      "away_team_id": "PIT",
+      "status": "scheduled"
+    },
+    {
+      "id": "G212",
+      "week": 14,
+      "season": 2026,
+      "home_team_id": "LV",
+      "away_team_id": "LAC",
+      "status": "scheduled"
+    },
+    {
+      "id": "G213",
+      "week": 14,
+      "season": 2026,
+      "home_team_id": "SF",
+      "away_team_id": "LAR",
+      "status": "scheduled"
+    },
+    {
+      "id": "G214",
+      "week": 14,
+      "season": 2026,
+      "home_team_id": "NE",
+      "away_team_id": "MIN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G215",
+      "week": 14,
+      "season": 2026,
+      "home_team_id": "SEA",
+      "away_team_id": "NYG",
+      "status": "scheduled"
+    },
+    {
+      "id": "G216",
+      "week": 15,
+      "season": 2026,
+      "home_team_id": "ARI",
+      "away_team_id": "NYJ",
+      "status": "scheduled"
+    },
+    {
+      "id": "G217",
+      "week": 15,
+      "season": 2026,
+      "home_team_id": "WAS",
+      "away_team_id": "ATL",
+      "status": "scheduled"
+    },
+    {
+      "id": "G218",
+      "week": 15,
+      "season": 2026,
+      "home_team_id": "PIT",
+      "away_team_id": "BAL",
+      "status": "scheduled"
+    },
+    {
+      "id": "G219",
+      "week": 15,
+      "season": 2026,
+      "home_team_id": "BUF",
+      "away_team_id": "CHI",
+      "status": "scheduled"
+    },
+    {
+      "id": "G220",
+      "week": 15,
+      "season": 2026,
+      "home_team_id": "CAR",
+      "away_team_id": "CIN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G221",
+      "week": 15,
+      "season": 2026,
+      "home_team_id": "NYG",
+      "away_team_id": "CLE",
+      "status": "scheduled"
+    },
+    {
+      "id": "G222",
+      "week": 15,
+      "season": 2026,
+      "home_team_id": "LAR",
+      "away_team_id": "DAL",
+      "status": "scheduled"
+    },
+    {
+      "id": "G223",
+      "week": 15,
+      "season": 2026,
+      "home_team_id": "LV",
+      "away_team_id": "DEN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G224",
+      "week": 15,
+      "season": 2026,
+      "home_team_id": "MIN",
+      "away_team_id": "DET",
+      "status": "scheduled"
+    },
+    {
+      "id": "G225",
+      "week": 15,
+      "season": 2026,
+      "home_team_id": "GB",
+      "away_team_id": "MIA",
+      "status": "scheduled"
+    },
+    {
+      "id": "G226",
+      "week": 15,
+      "season": 2026,
+      "home_team_id": "HOU",
+      "away_team_id": "JAX",
+      "status": "scheduled"
+    },
+    {
+      "id": "G227",
+      "week": 15,
+      "season": 2026,
+      "home_team_id": "TEN",
+      "away_team_id": "IND",
+      "status": "scheduled"
+    },
+    {
+      "id": "G228",
+      "week": 15,
+      "season": 2026,
+      "home_team_id": "KC",
+      "away_team_id": "NE",
+      "status": "scheduled"
+    },
+    {
+      "id": "G229",
+      "week": 15,
+      "season": 2026,
+      "home_team_id": "LAC",
+      "away_team_id": "SF",
+      "status": "scheduled"
+    },
+    {
+      "id": "G230",
+      "week": 15,
+      "season": 2026,
+      "home_team_id": "TB",
+      "away_team_id": "NO",
+      "status": "scheduled"
+    },
+    {
+      "id": "G231",
+      "week": 15,
+      "season": 2026,
+      "home_team_id": "PHI",
+      "away_team_id": "SEA",
+      "status": "scheduled"
+    },
+    {
+      "id": "G232",
+      "week": 16,
+      "season": 2026,
+      "home_team_id": "NO",
+      "away_team_id": "ARI",
+      "status": "scheduled"
+    },
+    {
+      "id": "G233",
+      "week": 16,
+      "season": 2026,
+      "home_team_id": "ATL",
+      "away_team_id": "TB",
+      "status": "scheduled"
+    },
+    {
+      "id": "G234",
+      "week": 16,
+      "season": 2026,
+      "home_team_id": "BAL",
+      "away_team_id": "CLE",
+      "status": "scheduled"
+    },
+    {
+      "id": "G235",
+      "week": 16,
+      "season": 2026,
+      "home_team_id": "DEN",
+      "away_team_id": "BUF",
+      "status": "scheduled"
+    },
+    {
+      "id": "G236",
+      "week": 16,
+      "season": 2026,
+      "home_team_id": "PIT",
+      "away_team_id": "CAR",
+      "status": "scheduled"
+    },
+    {
+      "id": "G237",
+      "week": 16,
+      "season": 2026,
+      "home_team_id": "CHI",
+      "away_team_id": "GB",
+      "status": "scheduled"
+    },
+    {
+      "id": "G238",
+      "week": 16,
+      "season": 2026,
+      "home_team_id": "IND",
+      "away_team_id": "CIN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G239",
+      "week": 16,
+      "season": 2026,
+      "home_team_id": "DAL",
+      "away_team_id": "JAX",
+      "status": "scheduled"
+    },
+    {
+      "id": "G240",
+      "week": 16,
+      "season": 2026,
+      "home_team_id": "DET",
+      "away_team_id": "NYG",
+      "status": "scheduled"
+    },
+    {
+      "id": "G241",
+      "week": 16,
+      "season": 2026,
+      "home_team_id": "PHI",
+      "away_team_id": "HOU",
+      "status": "scheduled"
+    },
+    {
+      "id": "G242",
+      "week": 16,
+      "season": 2026,
+      "home_team_id": "KC",
+      "away_team_id": "SF",
+      "status": "scheduled"
+    },
+    {
+      "id": "G243",
+      "week": 16,
+      "season": 2026,
+      "home_team_id": "LV",
+      "away_team_id": "TEN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G244",
+      "week": 16,
+      "season": 2026,
+      "home_team_id": "MIA",
+      "away_team_id": "LAC",
+      "status": "scheduled"
+    },
+    {
+      "id": "G245",
+      "week": 16,
+      "season": 2026,
+      "home_team_id": "SEA",
+      "away_team_id": "LAR",
+      "status": "scheduled"
+    },
+    {
+      "id": "G246",
+      "week": 16,
+      "season": 2026,
+      "home_team_id": "MIN",
+      "away_team_id": "WAS",
+      "status": "scheduled"
+    },
+    {
+      "id": "G247",
+      "week": 16,
+      "season": 2026,
+      "home_team_id": "NYJ",
+      "away_team_id": "NE",
+      "status": "scheduled"
+    },
+    {
+      "id": "G248",
+      "week": 17,
+      "season": 2026,
+      "home_team_id": "ARI",
+      "away_team_id": "LV",
+      "status": "scheduled"
+    },
+    {
+      "id": "G249",
+      "week": 17,
+      "season": 2026,
+      "home_team_id": "ATL",
+      "away_team_id": "NO",
+      "status": "scheduled"
+    },
+    {
+      "id": "G250",
+      "week": 17,
+      "season": 2026,
+      "home_team_id": "CIN",
+      "away_team_id": "BAL",
+      "status": "scheduled"
+    },
+    {
+      "id": "G251",
+      "week": 17,
+      "season": 2026,
+      "home_team_id": "MIA",
+      "away_team_id": "BUF",
+      "status": "scheduled"
+    },
+    {
+      "id": "G252",
+      "week": 17,
+      "season": 2026,
+      "home_team_id": "CAR",
+      "away_team_id": "SEA",
+      "status": "scheduled"
+    },
+    {
+      "id": "G253",
+      "week": 17,
+      "season": 2026,
+      "home_team_id": "CHI",
+      "away_team_id": "DET",
+      "status": "scheduled"
+    },
+    {
+      "id": "G254",
+      "week": 17,
+      "season": 2026,
+      "home_team_id": "CLE",
+      "away_team_id": "IND",
+      "status": "scheduled"
+    },
+    {
+      "id": "G255",
+      "week": 17,
+      "season": 2026,
+      "home_team_id": "DAL",
+      "away_team_id": "NYG",
+      "status": "scheduled"
+    },
+    {
+      "id": "G256",
+      "week": 17,
+      "season": 2026,
+      "home_team_id": "NE",
+      "away_team_id": "DEN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G257",
+      "week": 17,
+      "season": 2026,
+      "home_team_id": "GB",
+      "away_team_id": "HOU",
+      "status": "scheduled"
+    },
+    {
+      "id": "G258",
+      "week": 17,
+      "season": 2026,
+      "home_team_id": "JAX",
+      "away_team_id": "WAS",
+      "status": "scheduled"
+    },
+    {
+      "id": "G259",
+      "week": 17,
+      "season": 2026,
+      "home_team_id": "LAC",
+      "away_team_id": "KC",
+      "status": "scheduled"
+    },
+    {
+      "id": "G260",
+      "week": 17,
+      "season": 2026,
+      "home_team_id": "TB",
+      "away_team_id": "LAR",
+      "status": "scheduled"
+    },
+    {
+      "id": "G261",
+      "week": 17,
+      "season": 2026,
+      "home_team_id": "NYJ",
+      "away_team_id": "MIN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G262",
+      "week": 17,
+      "season": 2026,
+      "home_team_id": "SF",
+      "away_team_id": "PHI",
+      "status": "scheduled"
+    },
+    {
+      "id": "G263",
+      "week": 17,
+      "season": 2026,
+      "home_team_id": "TEN",
+      "away_team_id": "PIT",
+      "status": "scheduled"
+    },
+    {
+      "id": "G264",
+      "week": 18,
+      "season": 2026,
+      "home_team_id": "ARI",
+      "away_team_id": "SF",
+      "status": "scheduled"
+    },
+    {
+      "id": "G265",
+      "week": 18,
+      "season": 2026,
+      "home_team_id": "CAR",
+      "away_team_id": "ATL",
+      "status": "scheduled"
+    },
+    {
+      "id": "G266",
+      "week": 18,
+      "season": 2026,
+      "home_team_id": "BAL",
+      "away_team_id": "PIT",
+      "status": "scheduled"
+    },
+    {
+      "id": "G267",
+      "week": 18,
+      "season": 2026,
+      "home_team_id": "BUF",
+      "away_team_id": "NYJ",
+      "status": "scheduled"
+    },
+    {
+      "id": "G268",
+      "week": 18,
+      "season": 2026,
+      "home_team_id": "MIN",
+      "away_team_id": "CHI",
+      "status": "scheduled"
+    },
+    {
+      "id": "G269",
+      "week": 18,
+      "season": 2026,
+      "home_team_id": "CIN",
+      "away_team_id": "CLE",
+      "status": "scheduled"
+    },
+    {
+      "id": "G270",
+      "week": 18,
+      "season": 2026,
+      "home_team_id": "WAS",
+      "away_team_id": "DAL",
+      "status": "scheduled"
+    },
+    {
+      "id": "G271",
+      "week": 18,
+      "season": 2026,
+      "home_team_id": "DEN",
+      "away_team_id": "LAC",
+      "status": "scheduled"
+    },
+    {
+      "id": "G272",
+      "week": 18,
+      "season": 2026,
+      "home_team_id": "GB",
+      "away_team_id": "DET",
+      "status": "scheduled"
+    },
+    {
+      "id": "G273",
+      "week": 18,
+      "season": 2026,
+      "home_team_id": "HOU",
+      "away_team_id": "TEN",
+      "status": "scheduled"
+    },
+    {
+      "id": "G274",
+      "week": 18,
+      "season": 2026,
+      "home_team_id": "IND",
+      "away_team_id": "JAX",
+      "status": "scheduled"
+    },
+    {
+      "id": "G275",
+      "week": 18,
+      "season": 2026,
+      "home_team_id": "KC",
+      "away_team_id": "LV",
+      "status": "scheduled"
+    },
+    {
+      "id": "G276",
+      "week": 18,
+      "season": 2026,
+      "home_team_id": "LAR",
+      "away_team_id": "SEA",
+      "status": "scheduled"
+    },
+    {
+      "id": "G277",
+      "week": 18,
+      "season": 2026,
+      "home_team_id": "NE",
+      "away_team_id": "MIA",
+      "status": "scheduled"
+    },
+    {
+      "id": "G278",
+      "week": 18,
+      "season": 2026,
+      "home_team_id": "NO",
+      "away_team_id": "TB",
+      "status": "scheduled"
+    },
+    {
+      "id": "G279",
+      "week": 18,
+      "season": 2026,
+      "home_team_id": "NYG",
+      "away_team_id": "PHI",
+      "status": "scheduled"
+    }
+  ],
+  "entries": [
+    {
+      "id": "E1",
+      "entry_number": 1,
+      "name": "Entry 1",
+      "owner": "Me",
+      "status": "alive"
+    },
+    {
+      "id": "E2",
+      "entry_number": 2,
+      "name": "Entry 2",
+      "owner": "Me",
+      "status": "alive"
+    },
+    {
+      "id": "E3",
+      "entry_number": 3,
+      "name": "Entry 3",
+      "owner": "Me",
+      "status": "alive"
+    },
+    {
+      "id": "E4",
+      "entry_number": 4,
+      "name": "Entry 4",
+      "owner": "Me",
+      "status": "alive"
+    },
+    {
+      "id": "E5",
+      "entry_number": 5,
+      "name": "Entry 5",
+      "owner": "Me",
+      "status": "alive"
+    },
+    {
+      "id": "E6",
+      "entry_number": 6,
+      "name": "Entry 6",
+      "owner": "Me",
+      "status": "eliminated",
+      "eliminated_week": 1
+    },
+    {
+      "id": "E7",
+      "entry_number": 7,
+      "name": "Entry 7",
+      "owner": "Me",
+      "status": "alive"
+    },
+    {
+      "id": "E8",
+      "entry_number": 8,
+      "name": "Entry 8",
+      "owner": "Me",
+      "status": "eliminated",
+      "eliminated_week": 1
+    }
+  ],
+  "picks": [
+    { "id": "P_E1_W1", "entry_id": "E1", "week": 1, "team_id": "BUF", "status": "win", "updated_at": "2026-09-13T16:00:00.000Z" },
+    { "id": "P_E2_W1", "entry_id": "E2", "week": 1, "team_id": "SF", "status": "win", "updated_at": "2026-09-13T16:00:00.000Z" },
+    { "id": "P_E3_W1", "entry_id": "E3", "week": 1, "team_id": "CIN", "status": "win", "updated_at": "2026-09-13T16:00:00.000Z" },
+    { "id": "P_E4_W1", "entry_id": "E4", "week": 1, "team_id": "BAL", "status": "win", "updated_at": "2026-09-13T16:00:00.000Z" },
+    { "id": "P_E5_W1", "entry_id": "E5", "week": 1, "team_id": "MIN", "status": "win", "updated_at": "2026-09-13T16:00:00.000Z" },
+    { "id": "P_E6_W1", "entry_id": "E6", "week": 1, "team_id": "CLE", "status": "loss", "updated_at": "2026-09-13T16:00:00.000Z" },
+    { "id": "P_E7_W1", "entry_id": "E7", "week": 1, "team_id": "SEA", "status": "win", "updated_at": "2026-09-13T16:00:00.000Z" },
+    { "id": "P_E8_W1", "entry_id": "E8", "week": 1, "team_id": "LAC", "status": "loss", "updated_at": "2026-09-13T16:00:00.000Z" }
+  ],
+  "notes": [],
+  "settings": {
+    "pool_name": "BRIPPERON POOL",
+    "current_season": 2026,
+    "current_week": 2,
+    "pick_deadline": "Prior to Kickoff",
+    "ties_count_as_losses": true,
+    "allow_team_reuse": false,
+    "picks_per_week": 1,
+    "double_pick_weeks": [
+      12,
+      16
+    ],
+    "total_entries": 8
+  },
+  "activity_log": [
+    {
+      "id": "LOG_1789309273542_uhpt",
+      "action": "Settings Updated",
+      "details": "Pool settings were updated",
+      "timestamp": "2026-09-13T14:21:13.542Z"
+    },
+    {
+      "id": "L1",
+      "action": "Pool Initialized",
+      "details": "Clean slate 8-entry pool created for 2026 NFL Season",
+      "timestamp": "2026-09-13T13:00:28.532Z"
+    }
+  ]
+}

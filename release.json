@@ -1,0 +1,14 @@
+{
+  "productionUrl": "https://survivorhq.vercel.app/test-league",
+  "productionDeployment": "dpl_GGuJKQTYSVS7k53j5uJtXHm1W7xt",
+  "previewDeployment": "dpl_FFJ7NGA5jCgi5ou49FQtnbeY2xQk",
+  "previousProductionDeployment": "ENJpCvAQRpb4zVJCuRnDb4mhQLTu",
+  "migration": "202609150001_practice_leagues.sql",
+  "supabaseProject": "ytequbujojswljdybbmw",
+  "checks": [
+    "four local regression scenarios passed",
+    "local and Vercel builds passed",
+    "Supabase server access works; public table access denied",
+    "both formats tested against shared Supabase persistence"
+  ]
+}
