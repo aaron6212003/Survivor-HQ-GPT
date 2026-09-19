@@ -17,3 +17,29 @@ body { background-image:radial-gradient(circle at 50% -15%,rgba(66,216,154,.10),
  .stadium-header { position:relative; overflow:hidden; background:linear-gradient(120deg,#101a22 0%,#0b2d29 53%,#101720 100%); border:1px solid rgba(71,211,160,.30); }
  .stadium-header:after { content:""; position:absolute; inset:0; pointer-events:none; opacity:.18; background:repeating-linear-gradient(90deg,transparent 0,transparent calc(10% - 1px),rgba(255,255,255,.4) calc(10% - 1px),rgba(255,255,255,.4) 10%); }
 }
+
+/* Premium game-day UI */
+:root { --button-shadow: 0 10px 25px rgba(0,0,0,.28); }
+button, a { -webkit-tap-highlight-color: transparent; }
+button:not(:disabled) { transition:transform .16s ease, border-color .16s ease, background .16s ease, box-shadow .16s ease; }
+button:not(:disabled):active { transform:scale(.98); }
+.sports-primary { min-height:46px; letter-spacing:.01em; box-shadow:var(--button-shadow),0 0 0 1px rgba(255,255,255,.12) inset; }
+.sports-primary:hover { transform:translateY(-1px); box-shadow:0 14px 28px rgba(66,216,154,.22); }
+.score-ticker { display:flex; align-items:stretch; overflow:hidden; margin:0 -1rem; border-top:1px solid rgba(71,85,105,.45); border-bottom:1px solid rgba(71,85,105,.45); background:#090d14; font-size:12px; }
+.score-ticker__label { display:flex; align-items:center; gap:7px; flex:0 0 auto; padding:9px 14px; color:#d7e1ed; font-weight:800; letter-spacing:.06em; text-transform:uppercase; background:#111a24; border-right:1px solid rgba(71,85,105,.45); }
+.score-ticker__dot { width:7px; height:7px; border-radius:50%; background:#42d89a; box-shadow:0 0 12px #42d89a; }
+.score-ticker__track { display:flex; align-items:center; gap:0; min-width:0; overflow-x:auto; scrollbar-width:none; }
+.score-ticker__track::-webkit-scrollbar { display:none; }
+.score-ticker__game { display:flex; align-items:center; gap:6px; flex:0 0 auto; padding:9px 14px; color:#bac7d8; border-right:1px solid rgba(71,85,105,.3); }
+.score-ticker__game strong { color:#fff; font-size:13px; }
+.score-ticker__at { color:#526176; }
+.score-ticker__game em { margin-left:4px; color:#8491a3; font-size:10px; font-style:normal; font-weight:800; }
+.score-ticker__game em.is-live { color:#5ee7ad; }
+.team-choice { position:relative; isolation:isolate; overflow:hidden; min-height:145px; border-color:color-mix(in srgb, var(--team-primary) 55%, #344155) !important; background:linear-gradient(135deg,color-mix(in srgb,var(--team-primary) 24%,#070c16),#080d17 72%) !important; }
+.team-choice::after { content:""; position:absolute; z-index:-1; inset:auto -30% -55% auto; width:140px; height:140px; border-radius:50%; background:var(--team-secondary); opacity:.15; filter:blur(12px); }
+.team-choice:hover:not(:disabled) { border-color:var(--team-secondary) !important; transform:translateY(-2px); box-shadow:0 14px 28px rgba(0,0,0,.24); }
+.team-choice.is-selected { border-color:#61e7ad !important; background:linear-gradient(135deg,#075f49,#0c2c2b 72%) !important; box-shadow:0 0 0 1px rgba(94,231,173,.25) inset,0 12px 28px rgba(18,164,114,.16); }
+.matchup-card { overflow:hidden; border-color:#324156 !important; box-shadow:var(--button-shadow); }
+.matchup-card__top { margin:-1.25rem -1.25rem 1rem; padding:.7rem 1.25rem; background:linear-gradient(90deg,rgba(255,255,255,.05),transparent); }
+.mobile-pick-bar { position:fixed; z-index:30; left:12px; right:12px; bottom:12px; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:10px 12px; border:1px solid rgba(100,116,139,.7); border-radius:16px; background:rgba(8,13,22,.94); box-shadow:0 16px 42px rgba(0,0,0,.45); backdrop-filter:blur(18px); }
+@media (min-width:768px){.score-ticker{margin:0 -1.5rem}.mobile-pick-bar{display:none;}}
