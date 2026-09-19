@@ -1,9 +1,26 @@
 'use client';
-export const field='mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 p-3 text-white';
-export const primary='rounded-xl bg-emerald-400 px-5 py-3 text-slate-950 font-bold disabled:opacity-40 hover:bg-emerald-300';
-export const panel='rounded-2xl border border-slate-800 bg-slate-900 p-5 sm:p-6';
-export const defaults={name:'',format:'survivor',maxEntries:8,buyIn:0,deadlineMode:'per-game',tiebreaker:'shared',doublePickWeeks:[] as number[],tiesLose:true};
+
+export const field='sports-field mt-2 p-3';
+export const primary='sports-primary px-5 py-3';
+export const panel='sports-panel p-5 sm:p-6';
+export const defaults={name:'',format:'survivor',maxEntries:100,tiebreaker:'monday-total',tiesLose:true};
+
 export default function LeagueConfigFields({value,onChange,existing=false}:{value:any;onChange:(v:any)=>void;existing?:boolean}) {
- const set=(k:string,v:any)=>onChange({...value,[k]:v});
- return <div className="space-y-4"><label className="block">League name<input className={field} value={value.name} onChange={e=>set('name',e.target.value)} minLength={2} maxLength={60} required/></label><div className="grid sm:grid-cols-2 gap-4"><label>Format<select className={field} value={value.format} disabled={existing} onChange={e=>set('format',e.target.value)}><option value="survivor">Survivor</option><option value="pickem">Straight Pick’em</option><option value="confidence">Confidence</option></select></label><label>Entries per person<input className={field} type="number" min={1} max={8} required value={value.maxEntries} onChange={e=>set('maxEntries',Number(e.target.value))}/></label><label>Buy-in tracking ($)<input className={field} type="number" min={0} max={10000} step="0.01" value={value.buyIn} onChange={e=>set('buyIn',Number(e.target.value))}/></label><label>Pick deadline<select className={field} value={value.deadlineMode} onChange={e=>set('deadlineMode',e.target.value)}><option value="per-game">Each selected game’s kickoff</option><option value="first-game">First kickoff of the week</option></select></label><label>Tiebreaker<select className={field} value={value.tiebreaker} onChange={e=>set('tiebreaker',e.target.value)}><option value="shared">Share the rank</option><option value="correct-picks">Most correct picks</option></select></label></div>{value.format==='survivor'&&<><fieldset><legend className="mb-2">Double-pick weeks</legend><div className="flex flex-wrap gap-2">{Array.from({length:18},(_,i)=>i+1).map(w=><label key={w} className="p-2 rounded-lg bg-slate-950 border border-slate-700"><input type="checkbox" checked={value.doublePickWeeks.includes(w)} onChange={e=>set('doublePickWeeks',e.target.checked?[...value.doublePickWeeks,w].sort((a,b)=>a-b):value.doublePickWeeks.filter((n:number)=>n!==w))}/> {w}</label>)}</div></fieldset><label className="flex gap-3"><input type="checkbox" checked={value.tiesLose} onChange={e=>set('tiesLose',e.target.checked)}/>A tied game eliminates the Survivor entry</label></>}<p className="text-sm text-slate-500">Buy-in tracking does not collect money. Competition rules become fixed once picks are submitted or games start.</p></div>;
+ const set=(key:string,next:any)=>onChange({...value,[key]:next});
+ const setFormat=(format:string)=>onChange({...value,format,maxEntries:format==='survivor'?value.maxEntries||100:1,tiesLose:format==='survivor'?value.tiesLose!==false:true});
+ const survivor=value.format==='survivor';
+ return <div className="space-y-4">
+  <label className="block">League name<input className={field} value={value.name} onChange={e=>set('name',e.target.value)} minLength={2} maxLength={60} required/></label>
+  <div className="grid sm:grid-cols-2 gap-4">
+   <label>Format<select className={field} value={value.format} disabled={existing} onChange={e=>setFormat(e.target.value)}><option value="survivor">Survivor</option><option value="pickem">Straight Pick’em</option></select></label>
+   {survivor&&<label>Maximum lives per member<input className={field} type="number" min={1} max={100} required value={value.maxEntries} onChange={e=>set('maxEntries',Number(e.target.value))}/></label>}
+   {!survivor&&<div className="rounded-xl border border-sky-900 bg-sky-950/30 p-3 text-sm text-sky-100"><strong>Monday Night tiebreaker</strong><p className="mt-1">Each player predicts the total points in Monday night’s game. The closest prediction breaks a tied record.</p></div>}
+  </div>
+  <p className="rounded-xl border border-sky-900 bg-sky-950/30 p-3 text-sm text-sky-100">{survivor?'Survivor locks each matchup at its own kickoff. Thursday locks Thursday only; Sunday and Monday stay available until their own games begin.':'Straight Pick’em locks the entire weekly card at the first game kickoff, normally Thursday night. Submit every pick before then.'}</p>
+  {survivor?<>
+   <label className="flex gap-3"><input type="checkbox" checked={value.tiesLose} onChange={e=>set('tiesLose',e.target.checked)}/>A tied game eliminates the Survivor life</label>
+   <p className="text-sm text-slate-500">Each life gets one team per week. A team cannot be used twice by the same life.</p>
+  </>:<p className="text-sm text-slate-500">Every member receives one season record. Pick every game each week; correct picks build your record.</p>}
+  <p className="text-sm text-slate-500">Rules become fixed once picks are submitted or games start.</p>
+ </div>;
 }

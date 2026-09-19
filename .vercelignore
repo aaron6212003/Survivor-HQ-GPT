@@ -1,0 +1,8 @@
+.env*
+!.env.local.example
+node_modules
+.next
+.git
+data/test-leagues.json*
+tests
+README.md

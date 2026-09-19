@@ -20,20 +20,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className="bg-[#0B0E14] text-slate-100 min-h-screen flex flex-col font-sans antialiased">
+      <body className="bg-[#080b10] text-slate-100 min-h-screen flex flex-col font-sans antialiased">
         <AccountProvider>
         <Navbar />
         <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 pb-24 md:pb-12">
           {children}
         </main>
-        <footer className="hidden md:block bg-slate-950 border-t border-slate-900 py-6 text-center text-xs text-slate-500">
+        <footer className="hidden md:block bg-[#0b1017] border-t border-slate-800 py-6 text-center text-xs text-slate-500">
           <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
               <span className="font-extrabold text-slate-400">SURVIVOR HQ</span>
               <span>•</span>
               <span>Real NFL leagues</span>
             </div>
-            <p>Survivor · Pick’em · Confidence</p>
+            <p>Survivor · Pick’em</p>
           </div>
         </footer>
         </AccountProvider>
