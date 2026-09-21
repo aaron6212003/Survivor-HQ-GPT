@@ -43,3 +43,20 @@ button:not(:disabled):active { transform:scale(.98); }
 .matchup-card__top { margin:-1.25rem -1.25rem 1rem; padding:.7rem 1.25rem; background:linear-gradient(90deg,rgba(255,255,255,.05),transparent); }
 .mobile-pick-bar { position:fixed; z-index:30; left:12px; right:12px; bottom:12px; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:10px 12px; border:1px solid rgba(100,116,139,.7); border-radius:16px; background:rgba(8,13,22,.94); box-shadow:0 16px 42px rgba(0,0,0,.45); backdrop-filter:blur(18px); }
 @media (min-width:768px){.score-ticker{margin:0 -1.5rem}.mobile-pick-bar{display:none;}}
+
+/* Premium league hub */
+.sports-action { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; min-height:44px; padding:.65rem 1rem; border:1px solid #3c4d65; border-radius:12px; background:rgba(17,27,40,.86); color:#e7eef8; font-weight:800; text-decoration:none; box-shadow:0 8px 18px rgba(0,0,0,.18); transition:transform .16s ease, border-color .16s ease, background .16s ease; }
+.sports-action:hover { transform:translateY(-1px); border-color:#69e6b0; background:#162839; }
+.sports-action--primary { border-color:#62dfa9; background:linear-gradient(135deg,#53dfaa,#26ad7b); color:#06120f; box-shadow:0 12px 25px rgba(41,197,139,.24); }
+.sports-action--quiet { background:transparent; color:#a8b6c9; box-shadow:none; }
+.league-tile { position:relative; isolation:isolate; overflow:hidden; display:block; min-height:245px; padding:1.5rem; border:1px solid #40516a; border-radius:16px; box-shadow:0 16px 36px rgba(0,0,0,.26); transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.league-tile::after { content:""; position:absolute; z-index:-1; width:250px; height:250px; right:-90px; bottom:-145px; border-radius:50%; filter:blur(8px); opacity:.54; }
+.league-tile:hover { transform:translateY(-3px); box-shadow:0 22px 42px rgba(0,0,0,.34); }
+.league-tile--pickem { border-color:#31517d; background:linear-gradient(135deg,#111e34,#0e1726 70%); }
+.league-tile--pickem::after { background:#196bc4; }
+.league-tile--pickem:hover { border-color:#5ba9ff; }
+.league-tile--survivor { border-color:#246b58; background:linear-gradient(135deg,#102a29,#101923 70%); }
+.league-tile--survivor::after { background:#2ed39c; }
+.league-tile--survivor:hover { border-color:#62e9b5; }
+.league-tile__button { margin-top:1.35rem; width:max-content; color:#fff; background:rgba(3,10,17,.48); }
+.league-tile__button b { color:#6ce8b5; font-size:1.05rem; }
