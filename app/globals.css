@@ -65,3 +65,9 @@ button:not(:disabled):active { transform:scale(.98); }
 .odds-line span { color:#84a5ca; text-transform:uppercase; font-weight:800; letter-spacing:.1em; font-size:.64rem; }
 .odds-line b { color:#f1f7ff; }
 .odds-line small { margin-left:auto; color:#8090a4; font-size:.68rem; }
+
+.profile-hero { overflow:hidden; position:relative; padding:1.5rem; border:1px solid #286955; border-radius:18px; background:radial-gradient(circle at 85% 0%,rgba(71,211,160,.26),transparent 37%),linear-gradient(135deg,#12312e,#101b27 72%); box-shadow:0 20px 45px rgba(0,0,0,.28); }
+.profile-stat { padding:1rem; border:1px solid #33435a; border-radius:14px; background:#101924; }
+.profile-stat p { font-size:.7rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:#8fa3bb; }
+.profile-stat strong { display:block; margin-top:.2rem; font-size:1.85rem; color:#f6fbff; }
+.profile-stat small { color:#718198; }
