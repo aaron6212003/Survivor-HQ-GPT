@@ -50,15 +50,6 @@ private final class PickemLaunchOverlay: UIView {
     required init?(coder: NSCoder) { nil }
 
     private func setup() {
-        let glow = UIView()
-        glow.translatesAutoresizingMaskIntoConstraints = false
-        glow.backgroundColor = UIColor(red: 0.08, green: 0.88, blue: 0.58, alpha: 0.18)
-        glow.layer.cornerRadius = 190
-        glow.layer.shadowColor = UIColor(red: 0.08, green: 0.88, blue: 0.58, alpha: 1).cgColor
-        glow.layer.shadowOpacity = 0.45
-        glow.layer.shadowRadius = 65
-        addSubview(glow)
-
         ticket.translatesAutoresizingMaskIntoConstraints = false
         ticket.layer.cornerRadius = 30
         ticket.layer.cornerCurve = .continuous
@@ -126,10 +117,6 @@ private final class PickemLaunchOverlay: UIView {
         addSubview(subtitleLabel)
 
         NSLayoutConstraint.activate([
-            glow.centerXAnchor.constraint(equalTo: centerXAnchor),
-            glow.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -36),
-            glow.widthAnchor.constraint(equalToConstant: 255),
-            glow.heightAnchor.constraint(equalToConstant: 255),
             ticket.centerXAnchor.constraint(equalTo: centerXAnchor),
             ticket.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -48),
             ticket.widthAnchor.constraint(equalToConstant: 184),
@@ -187,23 +174,28 @@ private final class PickemLaunchOverlay: UIView {
     private func play() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.08) { [weak self] in
             guard let self else { return }
-            UIView.animate(withDuration: 0.42, delay: 0, usingSpringWithDamping: 0.72, initialSpringVelocity: 0.4, options: [.curveEaseOut]) {
+            UIView.animate(withDuration: 0.62, delay: 0, usingSpringWithDamping: 0.82, initialSpringVelocity: 0.25, options: [.curveEaseOut]) {
                 self.ticket.alpha = 1
                 self.ticket.transform = .identity
             }
             let draw = CABasicAnimation(keyPath: "strokeEnd")
             draw.fromValue = 0
             draw.toValue = 1
-            draw.duration = 0.42
-            draw.beginTime = CACurrentMediaTime() + 0.24
+            draw.duration = 0.58
+            draw.beginTime = CACurrentMediaTime() + 0.40
             draw.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-            self.checkLayer.add(draw, forKey: "drawCheck")
+            draw.fillMode = .both
+            draw.isRemovedOnCompletion = false
+            CATransaction.begin()
+            CATransaction.setDisableActions(true)
             self.checkLayer.strokeEnd = 1
-            UIView.animate(withDuration: 0.28, delay: 0.55, options: [.curveEaseOut]) {
+            CATransaction.commit()
+            self.checkLayer.add(draw, forKey: "drawCheck")
+            UIView.animate(withDuration: 0.36, delay: 1.06, options: [.curveEaseOut]) {
                 self.titleLabel.alpha = 1
                 self.subtitleLabel.alpha = 1
             }
-            UIView.animate(withDuration: 0.34, delay: 1.22, options: [.curveEaseIn]) {
+            UIView.animate(withDuration: 0.42, delay: 2.02, options: [.curveEaseInOut]) {
                 self.alpha = 0
             } completion: { _ in
                 self.removeFromSuperview()
