@@ -7,6 +7,8 @@ const config: CapacitorConfig = {
   server: {
     url: 'https://pickemhq.co',
     cleartext: false,
+    allowNavigation: ['pickemhq.co', 'www.pickemhq.co'],
+    errorPath: '/',
   },
 };
 

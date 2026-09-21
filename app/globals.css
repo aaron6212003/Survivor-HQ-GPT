@@ -6,6 +6,7 @@
 * { box-sizing:border-box; }
 html,body { background:var(--background); color:var(--foreground); font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; overflow-x:hidden; touch-action:manipulation; -webkit-text-size-adjust:100%; }
 body { background-image:radial-gradient(circle at 50% -15%,rgba(66,216,154,.10),transparent 28rem),linear-gradient(rgba(255,255,255,.014) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.014) 1px,transparent 1px); background-size:auto,24px 24px,24px 24px; }
+@supports (padding: max(0px)) { body { padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inset-bottom); } }
 ::selection { background:#42d89a; color:#08110e; }
 ::-webkit-scrollbar { width:6px; height:6px; } ::-webkit-scrollbar-track { background:#080b10; } ::-webkit-scrollbar-thumb { background:#3a4759; border-radius:999px; }
 
