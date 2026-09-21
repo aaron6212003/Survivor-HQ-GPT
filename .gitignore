@@ -29,3 +29,7 @@ lerna-debug.log*
 *.tsbuildinfo
 next-env.d.ts
 /data/test-leagues.json*
+
+# Xcode local build metadata
+.DS_Store
+ios/App/App.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/
