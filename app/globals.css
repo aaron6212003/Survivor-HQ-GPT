@@ -90,3 +90,9 @@ button:not(:disabled):active { transform:scale(.98); }
   .league-tile p.text-sm { margin-top:.45rem; font-size:.88rem; line-height:1.25; }
   .league-tile__button { min-height:40px; margin-top:.85rem; padding:.45rem .75rem; }
 }
+
+
+/* Keep short mobile views focused on the task, not a legal footer. */
+@media (max-width: 639px) {
+  .site-footer { display:none; }
+}
