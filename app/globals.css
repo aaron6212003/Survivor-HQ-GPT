@@ -60,3 +60,8 @@ button:not(:disabled):active { transform:scale(.98); }
 .league-tile--survivor:hover { border-color:#62e9b5; }
 .league-tile__button { margin-top:1.35rem; width:max-content; color:#fff; background:rgba(3,10,17,.48); }
 .league-tile__button b { color:#6ce8b5; font-size:1.05rem; }
+
+.odds-line { display:flex; flex-wrap:wrap; align-items:center; gap:.55rem; margin:-.2rem 0 1rem; padding:.65rem .75rem; border:1px solid rgba(93,126,161,.48); border-radius:10px; background:linear-gradient(90deg,rgba(20,51,82,.6),rgba(12,19,30,.58)); color:#c7d8ec; font-size:.78rem; }
+.odds-line span { color:#84a5ca; text-transform:uppercase; font-weight:800; letter-spacing:.1em; font-size:.64rem; }
+.odds-line b { color:#f1f7ff; }
+.odds-line small { margin-left:auto; color:#8090a4; font-size:.68rem; }
