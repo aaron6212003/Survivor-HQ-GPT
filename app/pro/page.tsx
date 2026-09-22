@@ -1,4 +1,23 @@
 'use client';
 import Link from 'next/link';
-import {useAccount} from '@/components/AccountProvider';
-export default function ProPage(){const {session,boot}=useAccount();const pro=boot?.pro;return <div className="mx-auto max-w-3xl space-y-6"><header className="stadium-header rounded-2xl p-7"><p className="score-label text-emerald-200">PICKEM HQ PRO</p><h1 className="mt-2 text-4xl font-black">More customization. More powerful research.</h1><p className="mt-3 max-w-xl text-slate-300">A quieter, more capable way to shape your profile and research every Survivor decision.</p>{pro?.isPro?<p className="mt-5 font-bold text-emerald-300">Pro is active on this account.</p>:<button className="sports-action sports-action--primary mt-5">Upgrade coming soon</button>}</header><section className="grid gap-4 sm:grid-cols-2"><article className="sports-panel p-5"><p className="score-label text-emerald-300">CUSTOMIZE</p><ul className="mt-4 space-y-2 text-sm text-slate-300"><li>Premium profile themes and banners</li><li>Accent colors and avatar frames</li><li>Alternate app icon selections</li><li>Commissioner league branding</li></ul></article><article className="sports-panel p-5"><p className="score-label text-sky-300">RESEARCH</p><ul className="mt-4 space-y-2 text-sm text-slate-300"><li>Advanced Survivor Matrix filters</li><li>Matchup comparison</li><li>Odds movement when available</li><li>Deeper injury, weather, and schedule context</li></ul></article></section>{!session&&<Link href="/login?next=/pro" className="sports-action">Sign in to explore Pro</Link>}<p className="text-xs text-slate-500">Purchasing is not enabled yet. This page never grants Pro access.</p></div>}
+
+export default function ProPage(){
+ return <div className="mx-auto max-w-3xl space-y-5">
+  <header className="stadium-header rounded-2xl p-7">
+   <p className="score-label text-emerald-200">PICKEM HQ</p>
+   <h1 className="mt-2 text-4xl font-black">More is on the way.</h1>
+   <p className="mt-3 max-w-xl text-slate-300">Pickem HQ is launching with every planning tool open to everyone. A future membership will add optional extras without getting in the way of the core game.</p>
+  </header>
+  <section className="sports-panel p-6">
+   <p className="score-label text-emerald-300">COMING SOON</p>
+   <h2 className="mt-2 text-2xl font-black">A little more, when it is worth it.</h2>
+   <p className="mt-2 max-w-xl text-sm text-slate-400">The Survivor Matrix, advanced filters, planned picks, and future-window research are already included. There is nothing to buy today.</p>
+   <div className="mt-5 grid gap-3 sm:grid-cols-3 text-sm">
+    <div className="rounded-xl border border-slate-700 bg-slate-950/60 p-4"><b>Deeper research</b><p className="mt-1 text-slate-400">More matchup context when the data is reliable.</p></div>
+    <div className="rounded-xl border border-slate-700 bg-slate-950/60 p-4"><b>League tools</b><p className="mt-1 text-slate-400">Helpful commissioner controls and recaps.</p></div>
+    <div className="rounded-xl border border-slate-700 bg-slate-950/60 p-4"><b>Personal touches</b><p className="mt-1 text-slate-400">Optional ways to make your account feel like yours.</p></div>
+   </div>
+  </section>
+  <Link href="/matrix" className="sports-action sports-action--primary">Open Survivor Matrix</Link>
+ </div>
+}

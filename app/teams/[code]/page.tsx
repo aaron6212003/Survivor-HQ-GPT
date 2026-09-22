@@ -4,8 +4,10 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
-import { ChevronLeft, Calendar, Tv, Clock } from 'lucide-react';
+import { ChevronLeft, Calendar, Tv, Clock, Newspaper, ExternalLink } from 'lucide-react';
 import { NFLTeam } from '@/lib/types';
+
+interface NewsStory { title: string; source: string; publishedAt: string; url: string; }
 
 interface ScheduleGame {
   id: string;
@@ -29,6 +31,8 @@ export default function TeamDetailPage() {
   const [team, setTeam] = useState<NFLTeam | null>(null);
   const [schedule, setSchedule] = useState<ScheduleGame[]>([]);
   const [loading, setLoading] = useState(true);
+  const [news, setNews] = useState<NewsStory[]>([]);
+  const [newsLoading, setNewsLoading] = useState(true);
 
   useEffect(() => {
     if (!code) return;
@@ -55,7 +59,7 @@ export default function TeamDetailPage() {
     window.addEventListener('survivor_pick_updated', loadTeamData);
     window.addEventListener('storage', loadTeamData);
 
-    const interval = setInterval(loadTeamData, 1000);
+    const interval = setInterval(loadTeamData, 45_000);
 
     return () => {
       window.removeEventListener('focus', loadTeamData);
@@ -64,6 +68,17 @@ export default function TeamDetailPage() {
       window.removeEventListener('storage', loadTeamData);
       clearInterval(interval);
     };
+  }, [code]);
+
+  useEffect(() => {
+    if (!code) return;
+    let active = true;
+    fetch(`/api/team-news/${code}`)
+      .then((response) => response.ok ? response.json() : null)
+      .then((data) => { if (active) setNews(data?.stories || []); })
+      .catch(() => undefined)
+      .finally(() => { if (active) setNewsLoading(false); });
+    return () => { active = false; };
   }, [code]);
 
   if (loading || !team) {
@@ -112,6 +127,15 @@ export default function TeamDetailPage() {
           </div>
         </div>
       </div>
+
+      <section className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/90 shadow-xl">
+        <div className="flex items-center justify-between gap-3 border-b border-slate-800 bg-slate-950/60 p-4">
+          <div className="flex items-center gap-2"><Newspaper className="h-4 w-4 text-emerald-400" /><span className="text-xs font-extrabold uppercase tracking-wider text-slate-300">Team Pulse</span></div>
+          <span className="text-[11px] font-semibold text-slate-500">Latest headlines</span>
+        </div>
+        {newsLoading ? <p className="p-4 text-sm text-slate-400">Loading headlines…</p> : news.length ? <div className="divide-y divide-slate-800">{news.map((story,index)=><a key={`${story.url}-${index}`} href={story.url} target="_blank" rel="noreferrer" className="flex items-start justify-between gap-3 p-4 transition-colors hover:bg-slate-800/50"><div className="min-w-0"><p className="text-xs font-bold text-emerald-300">{story.source}{story.publishedAt ? ` · ${new Date(story.publishedAt).toLocaleDateString(undefined,{month:'short',day:'numeric'})}` : ''}</p><p className="mt-1 text-sm font-bold leading-snug text-slate-100">{story.title}</p></div><ExternalLink className="mt-1 h-4 w-4 shrink-0 text-slate-500" /></a>)}</div> : <p className="p-4 text-sm text-slate-400">No recent headlines are available right now. Try again later.</p>}
+        <p className="border-t border-slate-800 bg-slate-950/40 px-4 py-3 text-[11px] text-slate-500">Headlines link to their original publishers. The feed refreshes periodically to keep requests low.</p>
+      </section>
 
       {/* Regular Season Schedule Table & Mobile Cards */}
       <div className="bg-slate-900/90 border border-slate-800 rounded-2xl overflow-hidden shadow-xl">
