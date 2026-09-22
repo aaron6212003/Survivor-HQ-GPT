@@ -28,7 +28,7 @@ export async function GET(req: Request, { params }: { params: { code: string } }
 
     // Refresh only weeks that have reached kickoff. Results are shared in a short server cache.
     const playedWeeks = Array.from(new Set(allGames.filter((game) => {
-      const kickoff = game.game_date ? Date.parse(`${game.game_date} ${game.game_time || '00:00'}`) : NaN;
+      const kickoff = game.kickoff_at ? Date.parse(game.kickoff_at) : (game.game_date ? Date.parse(`${game.game_date} ${game.game_time || '00:00'}`) : NaN);
       return Number.isFinite(kickoff) && kickoff <= Date.now();
     }).map((game) => game.week)));
     const liveWeeks = await Promise.all(playedWeeks.map(liveWeek));

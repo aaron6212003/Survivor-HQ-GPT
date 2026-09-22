@@ -13,7 +13,7 @@ export default function TeamsPage() {
   const [confFilter, setConfFilter] = useState<'ALL' | 'AFC' | 'NFC'>('ALL');
 
   useEffect(() => {
-    fetch('/api/teams')
+    fetch(`/api/teams?t=${Date.now()}`)
       .then((res) => res.json())
       .then((data) => {
         setTeams(data.teams || []);
