@@ -89,7 +89,7 @@ export function syncAndEvaluateData(data: DatabaseSchema) {
     for (const g of data.games) {
       const existing = gameMap.get(g.id);
       if (existing) {
-        gameMap.set(g.id, { ...existing, ...g });
+        gameMap.set(g.id, { ...existing, ...Object.fromEntries(Object.entries(g).filter(([, value]) => value !== undefined)) });
       } else {
         gameMap.set(g.id, g);
       }
