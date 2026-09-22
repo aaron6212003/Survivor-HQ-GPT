@@ -2,6 +2,15 @@ import { NextResponse } from 'next/server';
 import { getTeamByCode, getAllGames, getAllTeams } from '@/lib/db';
 import { fetchEspnLiveScoreboard } from '@/lib/espnApi';
 
+const liveCache = new Map<string, { at: number; games: Awaited<ReturnType<typeof fetchEspnLiveScoreboard>> }>();
+async function liveWeek(week: number) {
+  const cached = liveCache.get(String(week));
+  if (cached && Date.now() - cached.at < 10 * 60_000) return cached.games;
+  const games = await fetchEspnLiveScoreboard(week);
+  liveCache.set(String(week), { at: Date.now(), games });
+  return games;
+}
+
 export const revalidate = 0;
 export const dynamic = 'force-dynamic';
 
@@ -17,10 +26,14 @@ export async function GET(req: Request, { params }: { params: { code: string } }
     const allTeams = getAllTeams();
     const teamMap = new Map(allTeams.map((t) => [t.id, t]));
 
-    // Fetch live ESPN data for Week 1 (and current season)
-    const espnLiveGames = await fetchEspnLiveScoreboard(1);
+    // Refresh only weeks that have reached kickoff. Results are shared in a short server cache.
+    const playedWeeks = Array.from(new Set(allGames.filter((game) => {
+      const kickoff = game.game_date ? Date.parse(`${game.game_date} ${game.game_time || '00:00'}`) : NaN;
+      return Number.isFinite(kickoff) && kickoff <= Date.now();
+    }).map((game) => game.week)));
+    const liveWeeks = await Promise.all(playedWeeks.map(liveWeek));
     const espnMap = new Map<string, any>();
-    for (const eg of espnLiveGames) {
+    for (const weekGames of liveWeeks) for (const eg of weekGames) {
       espnMap.set(`${eg.homeTeamId}_${eg.awayTeamId}`, eg);
       espnMap.set(`${eg.awayTeamId}_${eg.homeTeamId}`, eg);
     }
