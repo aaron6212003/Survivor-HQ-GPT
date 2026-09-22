@@ -5,9 +5,9 @@ import Link from 'next/link';
 import {useAccount} from '@/components/AccountProvider';
 import {hq} from '@/lib/hq/client';
 
-const all=['ARI','ATL','BAL','BUF','CAR','CHI','CIN','CLE','DAL','DEN','DET','GB','HOU','IND','JAX','KC','LV','LAC','LAR','MIA','MIN','NE','NO','NYG','NYJ','PHI','PIT','SEA','SF','TB','TEN','WAS'];
+const all=['ARI','ATL','BAL','BUF','CAR','CHI','CIN','CLE','DAL','DEN','DET','GB','HOU','IND','JAX','KC','LV','LAC','LAR','MIA','MIN','NE','NO','NYG','NYJ','PHI','PIT','SEA','SF','TB','TEN','WSH'];
 const colors:Record<string,string>={BUF:'#1670d2',PHI:'#008a91',BAL:'#4730aa',GB:'#225e48',KC:'#e51b3e',TB:'#d50d2e'};
-const division:Record<string,string>={BUF:'AFC-E',MIA:'AFC-E',NE:'AFC-E',NYJ:'AFC-E',BAL:'AFC-N',CIN:'AFC-N',CLE:'AFC-N',PIT:'AFC-N',HOU:'AFC-S',IND:'AFC-S',JAX:'AFC-S',TEN:'AFC-S',DEN:'AFC-W',KC:'AFC-W',LV:'AFC-W',LAC:'AFC-W',DAL:'NFC-E',NYG:'NFC-E',PHI:'NFC-E',WAS:'NFC-E',CHI:'NFC-N',DET:'NFC-N',GB:'NFC-N',MIN:'NFC-N',ATL:'NFC-S',CAR:'NFC-S',NO:'NFC-S',TB:'NFC-S',ARI:'NFC-W',LAR:'NFC-W',SEA:'NFC-W',SF:'NFC-W'};
+const division:Record<string,string>={BUF:'AFC-E',MIA:'AFC-E',NE:'AFC-E',NYJ:'AFC-E',BAL:'AFC-N',CIN:'AFC-N',CLE:'AFC-N',PIT:'AFC-N',HOU:'AFC-S',IND:'AFC-S',JAX:'AFC-S',TEN:'AFC-S',DEN:'AFC-W',KC:'AFC-W',LV:'AFC-W',LAC:'AFC-W',DAL:'NFC-E',NYG:'NFC-E',PHI:'NFC-E',WSH:'NFC-E',CHI:'NFC-N',DET:'NFC-N',GB:'NFC-N',MIN:'NFC-N',ATL:'NFC-S',CAR:'NFC-S',NO:'NFC-S',TB:'NFC-S',ARI:'NFC-W',LAR:'NFC-W',SEA:'NFC-W',SF:'NFC-W'};
 const windows=[3,5,8,18] as const;
 type Planned=Record<number,string>;type Location='all'|'home'|'away';type Availability='available'|'all'|'used'|'planned'|'allEntries';type GameType='all'|'division'|'nondivision'|'primetime'|'shortweek';type Market='all'|'favorite'|'underdog';
 function oddsKey(away:string,home:string){return `${away}|${home}`}
