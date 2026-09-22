@@ -12,10 +12,13 @@ export async function GET() {
   const playedWeeks = Array.from(new Set(games.filter(game => game.kickoff_at && Date.parse(game.kickoff_at) <= Date.now()).map(game => game.week)));
   const liveWeeks = await Promise.all(playedWeeks.map(fetchEspnLiveScoreboard));
   const results = new Map<string, { homeScore?:number; awayScore?:number; complete:boolean }>();
-  for (const week of liveWeeks) for (const game of week) results.set(`${game.homeTeamId}_${game.awayTeamId}`, { homeScore: game.homeScore, awayScore: game.awayScore, complete: game.isCompleted });
+  for (let index = 0; index < liveWeeks.length; index += 1) {
+    const week = playedWeeks[index];
+    for (const game of liveWeeks[index]) results.set(`${week}:${game.homeTeamId}_${game.awayTeamId}`, { homeScore: game.homeScore, awayScore: game.awayScore, complete: game.isCompleted });
+  }
   const records = new Map(teams.map(team => [team.id, { wins:0, losses:0, ties:0 }]));
   for (const game of games) {
-    const live = results.get(`${game.home_team_id}_${game.away_team_id}`);
+    const live = results.get(`${game.week}:${game.home_team_id}_${game.away_team_id}`);
     if (!live?.complete || typeof live.homeScore !== 'number' || typeof live.awayScore !== 'number') continue;
     const homeScore = live.homeScore; const awayScore = live.awayScore;
     const home = records.get(game.home_team_id)!; const away = records.get(game.away_team_id)!;

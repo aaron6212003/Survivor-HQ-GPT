@@ -33,9 +33,12 @@ export async function GET(req: Request, { params }: { params: { code: string } }
     }).map((game) => game.week)));
     const liveWeeks = await Promise.all(playedWeeks.map(liveWeek));
     const espnMap = new Map<string, any>();
-    for (const weekGames of liveWeeks) for (const eg of weekGames) {
-      espnMap.set(`${eg.homeTeamId}_${eg.awayTeamId}`, eg);
-      espnMap.set(`${eg.awayTeamId}_${eg.homeTeamId}`, eg);
+    for (let index = 0; index < liveWeeks.length; index += 1) {
+      const week = playedWeeks[index];
+      for (const eg of liveWeeks[index]) {
+        espnMap.set(`${week}:${eg.homeTeamId}_${eg.awayTeamId}`, eg);
+        espnMap.set(`${week}:${eg.awayTeamId}_${eg.homeTeamId}`, eg);
+      }
     }
 
     const teamGames = allGames
@@ -45,7 +48,7 @@ export async function GET(req: Request, { params }: { params: { code: string } }
         const oppId = isHome ? g.away_team_id : g.home_team_id;
         const opponent = teamMap.get(oppId);
 
-        const espnMatch = espnMap.get(`${g.home_team_id}_${g.away_team_id}`);
+        const espnMatch = espnMap.get(`${g.week}:${g.home_team_id}_${g.away_team_id}`);
 
         // The bundled schedule deliberately supplies only fixtures. Completed scores must
         // come from the live scoreboard so placeholder results can never affect records.
