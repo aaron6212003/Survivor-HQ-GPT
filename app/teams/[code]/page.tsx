@@ -102,6 +102,16 @@ export default function TeamDetailPage() {
     );
   }
 
+  // Keep the summary tied to the exact completed games displayed below it.
+  // The record cannot drift if a cached team object arrives before the live schedule.
+  const displayedRecord = schedule.reduce((record, game) => {
+    if (game.status !== 'final' || !game.result) return record;
+    if (game.result === 'WIN') record.wins += 1;
+    else if (game.result === 'LOSS') record.losses += 1;
+    else record.ties += 1;
+    return record;
+  }, { wins: 0, losses: 0, ties: 0 });
+
   return (
     <div className="space-y-6 max-w-5xl mx-auto px-1 sm:px-0">
       {/* Back button */}
@@ -141,7 +151,7 @@ export default function TeamDetailPage() {
       </div>
 
       <section className="grid grid-cols-2 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/90 shadow-xl divide-x divide-slate-800">
-        <div className="p-3.5"><p className="text-[10px] font-extrabold uppercase tracking-wider text-slate-500">Record</p><p className="mt-1 text-lg font-black text-white">{`${team.wins}-${team.losses}${team.ties ? `-${team.ties}` : ''}`}</p></div>
+        <div className="p-3.5"><p className="text-[10px] font-extrabold uppercase tracking-wider text-slate-500">Record</p><p className="mt-1 text-lg font-black text-white">{`${displayedRecord.wins}-${displayedRecord.losses}${displayedRecord.ties ? `-${displayedRecord.ties}` : ''}`}</p></div>
         <div className="p-3.5"><p className="text-[10px] font-extrabold uppercase tracking-wider text-slate-500">Next home weather</p><p className="mt-1 truncate text-xs font-bold text-slate-200">{research?.weather?.kind==='dome' ? 'Dome' : research?.weather ? `${research.weather.temperature}°${research.weather.unit || ''} · ${research.weather.wind || research.weather.forecast || 'Outdoor'}` : 'Available near kickoff'}</p></div>
       </section>
 
