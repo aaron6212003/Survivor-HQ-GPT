@@ -15,9 +15,9 @@ export async function GET() {
   for (const week of liveWeeks) for (const game of week) results.set(`${game.homeTeamId}_${game.awayTeamId}`, { homeScore: game.homeScore, awayScore: game.awayScore, complete: game.isCompleted });
   const records = new Map(teams.map(team => [team.id, { wins:0, losses:0, ties:0 }]));
   for (const game of games) {
-    const live = results.get(`${game.home_team_id}_${game.away_team_id}`); const complete = live?.complete || game.status === 'final';
-    const homeScore = live?.homeScore ?? game.home_score; const awayScore = live?.awayScore ?? game.away_score;
-    if (!complete || typeof homeScore !== 'number' || typeof awayScore !== 'number') continue;
+    const live = results.get(`${game.home_team_id}_${game.away_team_id}`);
+    if (!live?.complete || typeof live.homeScore !== 'number' || typeof live.awayScore !== 'number') continue;
+    const homeScore = live.homeScore; const awayScore = live.awayScore;
     const home = records.get(game.home_team_id)!; const away = records.get(game.away_team_id)!;
     if (homeScore > awayScore) { home.wins++; away.losses++; } else if (awayScore > homeScore) { away.wins++; home.losses++; } else { home.ties++; away.ties++; }
   }

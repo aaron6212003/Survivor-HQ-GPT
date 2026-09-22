@@ -47,21 +47,20 @@ export async function GET(req: Request, { params }: { params: { code: string } }
 
         const espnMatch = espnMap.get(`${g.home_team_id}_${g.away_team_id}`);
 
-        let status = g.status;
-        let homeScore = g.home_score;
-        let awayScore = g.away_score;
-        let winnerTeamId = g.winner_team_id;
+        // The bundled schedule deliberately supplies only fixtures. Completed scores must
+        // come from the live scoreboard so placeholder results can never affect records.
+        let status: 'scheduled' | 'in_progress' | 'final' = 'scheduled';
+        let homeScore: number | undefined;
+        let awayScore: number | undefined;
+        let winnerTeamId: string | undefined;
         let statusDetail = g.game_date && g.game_time ? `${g.game_date} • ${g.game_time} ET` : 'Scheduled';
 
         if (espnMatch) {
-          if (espnMatch.isCompleted) {
-            status = 'final';
-          } else if (espnMatch.statusState === 'in') {
-            status = 'in_progress';
-          }
-          if (espnMatch.homeScore !== undefined) homeScore = espnMatch.homeScore;
-          if (espnMatch.awayScore !== undefined) awayScore = espnMatch.awayScore;
-          if (espnMatch.winnerTeamId) winnerTeamId = espnMatch.winnerTeamId;
+          if (espnMatch.isCompleted) status = 'final';
+          else if (espnMatch.statusState === 'in') status = 'in_progress';
+          homeScore = espnMatch.homeScore;
+          awayScore = espnMatch.awayScore;
+          winnerTeamId = espnMatch.winnerTeamId;
           statusDetail = espnMatch.statusDetail || statusDetail;
         }
 
