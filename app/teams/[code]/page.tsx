@@ -93,6 +93,15 @@ export default function TeamDetailPage() {
     return () => { active = false; };
   }, [code]);
 
+  const completedGames = schedule.filter((game) => game.status === 'final');
+  const liveRecord = completedGames.reduce((record, game) => {
+    if (game.result === 'WIN') record.wins += 1;
+    else if (game.result === 'LOSS') record.losses += 1;
+    else if (game.result === 'TIE') record.ties += 1;
+    return record;
+  }, { wins: 0, losses: 0, ties: 0 });
+  const liveForm = completedGames.slice(-5).reverse().map((game) => game.result === 'WIN' ? 'W' : game.result === 'LOSS' ? 'L' : 'T');
+
   if (loading || !team) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[50vh] gap-3">
@@ -141,8 +150,8 @@ export default function TeamDetailPage() {
       </div>
 
       <section className="grid grid-cols-3 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/90 shadow-xl divide-x divide-slate-800">
-        <div className="p-3.5"><p className="text-[10px] font-extrabold uppercase tracking-wider text-slate-500">Record</p><p className="mt-1 text-lg font-black text-white">{research?.record ? `${research.record.wins}-${research.record.losses}${research.record.ties ? `-${research.record.ties}` : ''}` : '—'}</p></div>
-        <div className="p-3.5"><p className="text-[10px] font-extrabold uppercase tracking-wider text-slate-500">Last 5</p><div className="mt-2 flex gap-1">{research?.form?.length ? research.form.map((result,index)=><span key={index} className={`rounded px-1.5 py-0.5 text-[11px] font-black ${result==='W'?'bg-emerald-500/20 text-emerald-300':result==='L'?'bg-rose-500/20 text-rose-300':'bg-amber-500/20 text-amber-300'}`}>{result}</span>) : <span className="text-sm text-slate-500">—</span>}</div></div>
+        <div className="p-3.5"><p className="text-[10px] font-extrabold uppercase tracking-wider text-slate-500">Record</p><p className="mt-1 text-lg font-black text-white">{completedGames.length ? `${liveRecord.wins}-${liveRecord.losses}${liveRecord.ties ? `-${liveRecord.ties}` : ''}` : '—'}</p></div>
+        <div className="p-3.5"><p className="text-[10px] font-extrabold uppercase tracking-wider text-slate-500">Last 5</p><div className="mt-2 flex gap-1">{liveForm.length ? liveForm.map((result,index)=><span key={index} className={`rounded px-1.5 py-0.5 text-[11px] font-black ${result==='W'?'bg-emerald-500/20 text-emerald-300':result==='L'?'bg-rose-500/20 text-rose-300':'bg-amber-500/20 text-amber-300'}`}>{result}</span>) : <span className="text-sm text-slate-500">—</span>}</div></div>
         <div className="p-3.5"><p className="text-[10px] font-extrabold uppercase tracking-wider text-slate-500">Next home weather</p><p className="mt-1 truncate text-xs font-bold text-slate-200">{research?.weather?.kind==='dome' ? 'Dome' : research?.weather ? `${research.weather.temperature}°${research.weather.unit || ''} · ${research.weather.wind || research.weather.forecast || 'Outdoor'}` : 'Available near kickoff'}</p></div>
       </section>
 
