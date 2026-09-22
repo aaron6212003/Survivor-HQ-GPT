@@ -39,7 +39,7 @@ export interface EspnGameResult {
 
 export async function fetchEspnLiveScoreboard(week: number = 1): Promise<EspnGameResult[]> {
   try {
-    const url = `https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?week=${week}&seasontype=2`;
+    const url = `https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?week=${week}&seasontype=2&dates=2026`;
     const res = await fetch(url, {
       cache: 'no-store',
       next: { revalidate: 10 },
