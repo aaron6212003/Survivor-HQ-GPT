@@ -8,7 +8,7 @@ import { ChevronLeft, Calendar, Tv, Clock, Newspaper, ExternalLink } from 'lucid
 import { NFLTeam } from '@/lib/types';
 
 interface NewsStory { title: string; source: string; publishedAt: string; url: string; }
-interface TeamResearch { record?: { wins:number; losses:number; ties:number }; form?: string[]; weather?: { kind:string; temperature?:number; unit?:string; wind?:string; forecast?:string } | null; }
+interface TeamResearch { record?: { wins:number; losses:number; ties:number }; form?: string[]; weather?: { kind:string; temperature?:number; unit?:string; wind?:string; forecast?:string } | null; injuries?: { available:boolean; total?:number; players?: {player:string; position?:string; status?:string}[] }; }
 
 interface ScheduleGame {
   id: string;
@@ -144,6 +144,11 @@ export default function TeamDetailPage() {
         <div className="p-3.5"><p className="text-[10px] font-extrabold uppercase tracking-wider text-slate-500">Record</p><p className="mt-1 text-lg font-black text-white">{research?.record ? `${research.record.wins}-${research.record.losses}${research.record.ties ? `-${research.record.ties}` : ''}` : '—'}</p></div>
         <div className="p-3.5"><p className="text-[10px] font-extrabold uppercase tracking-wider text-slate-500">Last 5</p><div className="mt-2 flex gap-1">{research?.form?.length ? research.form.map((result,index)=><span key={index} className={`rounded px-1.5 py-0.5 text-[11px] font-black ${result==='W'?'bg-emerald-500/20 text-emerald-300':result==='L'?'bg-rose-500/20 text-rose-300':'bg-amber-500/20 text-amber-300'}`}>{result}</span>) : <span className="text-sm text-slate-500">—</span>}</div></div>
         <div className="p-3.5"><p className="text-[10px] font-extrabold uppercase tracking-wider text-slate-500">Next home weather</p><p className="mt-1 truncate text-xs font-bold text-slate-200">{research?.weather?.kind==='dome' ? 'Dome' : research?.weather ? `${research.weather.temperature}°${research.weather.unit || ''} · ${research.weather.wind || research.weather.forecast || 'Outdoor'}` : 'Available near kickoff'}</p></div>
+      </section>
+
+      <section className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/90 shadow-xl">
+        <div className="flex items-center justify-between gap-3 border-b border-slate-800 bg-slate-950/60 p-4"><div className="flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-amber-400"/><span className="text-xs font-extrabold uppercase tracking-wider text-slate-300">Injury report</span></div><span className="text-[11px] font-semibold text-slate-500">{research?.injuries?.available ? `${research.injuries.total || 0} listed` : 'Connecting'}</span></div>
+        {research?.injuries?.players?.length ? <div className="divide-y divide-slate-800">{research.injuries.players.map((injury,index)=><div key={`${injury.player}-${index}`} className="flex items-center justify-between gap-3 px-4 py-3"><span className="text-sm font-bold text-slate-100">{injury.player}{injury.position ? <em className="ml-2 not-italic text-xs font-semibold text-slate-500">{injury.position}</em> : null}</span><span className="text-xs font-bold text-amber-300">{injury.status || 'Listed'}</span></div>)}</div> : <p className="px-4 py-3 text-sm text-slate-400">{research?.injuries?.available ? 'No current report is listed for this team.' : 'The injury feed will appear shortly.'}</p>}
       </section>
 
       <section className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/90 shadow-xl">
