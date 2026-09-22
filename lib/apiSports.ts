@@ -50,9 +50,9 @@ export async function getNflStandings() {
     const byTeam = new Map<string, StandingRecord>();
     for (const item of payload.response || []) {
       const games = item.games || {};
-      const wins = recordNumber(item.won ?? item.wins ?? games.win?.total ?? games.wins?.total);
-      const losses = recordNumber(item.lost ?? item.losses ?? games.lose?.total ?? games.loss?.total);
-      const ties = recordNumber(item.ties ?? games.tie?.total ?? games.ties?.total);
+      const wins = recordNumber(item.won ?? item.wins ?? games.win?.total ?? games.win?.all ?? games.wins?.total ?? games.wins?.all);
+      const losses = recordNumber(item.lost ?? item.losses ?? games.lose?.total ?? games.lose?.all ?? games.loss?.total ?? games.loss?.all);
+      const ties = recordNumber(item.ties ?? games.tie?.total ?? games.tie?.all ?? games.ties?.total ?? games.ties?.all);
       for (const name of [item.team?.name, item.team?.code, item.team?.abbreviation]) {
         if (name) byTeam.set(String(name).trim().toLowerCase(), { wins, losses, ties });
       }
