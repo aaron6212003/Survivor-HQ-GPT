@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getTeamByCode, getAllGames, getAllTeams } from '@/lib/db';
 import { fetchEspnLiveScoreboard } from '@/lib/espnApi';
+import { getNflStandings } from '@/lib/apiSports';
 
 const liveCache = new Map<string, { at: number; games: Awaited<ReturnType<typeof fetchEspnLiveScoreboard>> }>();
 async function liveWeek(week: number) {
@@ -24,6 +25,9 @@ export async function GET(req: Request, { params }: { params: { code: string } }
 
     const allGames = getAllGames();
     const allTeams = getAllTeams();
+    const standings = await getNflStandings();
+    const standing = standings.get(team.name.toLowerCase()) || standings.get(team.code.toLowerCase());
+    const liveTeam = standing ? { ...team, ...standing } : team;
     const teamMap = new Map(allTeams.map((t) => [t.id, t]));
 
     // Refresh only weeks that have reached kickoff. Results are shared in a short server cache.
@@ -90,7 +94,7 @@ export async function GET(req: Request, { params }: { params: { code: string } }
 
     return NextResponse.json(
       {
-        team,
+        team: liveTeam,
         schedule: teamGames,
       },
       {
