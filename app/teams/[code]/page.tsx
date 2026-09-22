@@ -8,6 +8,7 @@ import { ChevronLeft, Calendar, Tv, Clock, Newspaper, ExternalLink } from 'lucid
 import { NFLTeam } from '@/lib/types';
 
 interface NewsStory { title: string; source: string; publishedAt: string; url: string; }
+interface TeamResearch { record?: { wins:number; losses:number; ties:number }; form?: string[]; weather?: { kind:string; temperature?:number; unit?:string; wind?:string; forecast?:string } | null; }
 
 interface ScheduleGame {
   id: string;
@@ -33,6 +34,7 @@ export default function TeamDetailPage() {
   const [loading, setLoading] = useState(true);
   const [news, setNews] = useState<NewsStory[]>([]);
   const [newsLoading, setNewsLoading] = useState(true);
+  const [research, setResearch] = useState<TeamResearch | null>(null);
 
   useEffect(() => {
     if (!code) return;
@@ -68,6 +70,16 @@ export default function TeamDetailPage() {
       window.removeEventListener('storage', loadTeamData);
       clearInterval(interval);
     };
+  }, [code]);
+
+  useEffect(() => {
+    if (!code) return;
+    let active = true;
+    fetch(`/api/team-research/${code}`)
+      .then((response) => response.ok ? response.json() : null)
+      .then((data) => { if (active) setResearch(data); })
+      .catch(() => undefined);
+    return () => { active = false; };
   }, [code]);
 
   useEffect(() => {
@@ -127,6 +139,12 @@ export default function TeamDetailPage() {
           </div>
         </div>
       </div>
+
+      <section className="grid grid-cols-3 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/90 shadow-xl divide-x divide-slate-800">
+        <div className="p-3.5"><p className="text-[10px] font-extrabold uppercase tracking-wider text-slate-500">Record</p><p className="mt-1 text-lg font-black text-white">{research?.record ? `${research.record.wins}-${research.record.losses}${research.record.ties ? `-${research.record.ties}` : ''}` : '—'}</p></div>
+        <div className="p-3.5"><p className="text-[10px] font-extrabold uppercase tracking-wider text-slate-500">Last 5</p><div className="mt-2 flex gap-1">{research?.form?.length ? research.form.map((result,index)=><span key={index} className={`rounded px-1.5 py-0.5 text-[11px] font-black ${result==='W'?'bg-emerald-500/20 text-emerald-300':result==='L'?'bg-rose-500/20 text-rose-300':'bg-amber-500/20 text-amber-300'}`}>{result}</span>) : <span className="text-sm text-slate-500">—</span>}</div></div>
+        <div className="p-3.5"><p className="text-[10px] font-extrabold uppercase tracking-wider text-slate-500">Next home weather</p><p className="mt-1 truncate text-xs font-bold text-slate-200">{research?.weather?.kind==='dome' ? 'Dome' : research?.weather ? `${research.weather.temperature}°${research.weather.unit || ''} · ${research.weather.wind || research.weather.forecast || 'Outdoor'}` : 'Available near kickoff'}</p></div>
+      </section>
 
       <section className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/90 shadow-xl">
         <div className="flex items-center justify-between gap-3 border-b border-slate-800 bg-slate-950/60 p-4">
