@@ -134,7 +134,7 @@ button:not(:disabled):active { transform:scale(.98); }
   .matrix-clear,.matrix-advanced{width:100%;min-height:38px;margin:0;font-size:.66rem}
   .matrix-advanced-panel{grid-template-columns:1fr;gap:.5rem;padding:.55rem}
   .matrix-filter-group{min-height:0;padding:.55rem}
-  .matrix-multiselect{grid-template-columns:repeat(2,minmax(0,1fr)}
+  .matrix-multiselect{grid-template-columns:repeat(2,minmax(0,1fr))}
   .matrix-multiselect button{min-height:36px;font-size:.65rem}
   .matrix-opportunities{align-items:flex-start;padding:.55rem}
   .matrix-opportunities>div:first-child{min-width:88px}
