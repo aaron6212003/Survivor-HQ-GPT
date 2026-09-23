@@ -114,3 +114,57 @@ button:not(:disabled):active { transform:scale(.98); }
 
 /* Compact Matrix controls and an intentional load state. */
 .matrix-loading{display:grid;place-items:center;min-height:55dvh;align-content:center;gap:.45rem;color:#dce8f7}.matrix-loading span{width:30px;height:30px;border:3px solid #225147;border-top-color:#65e5b0;border-radius:999px;animation:spin .8s linear infinite}.matrix-loading b{font-size:.95rem}.matrix-loading p{margin:0;color:#91a2b8;font-size:.72rem}.matrix-advanced-panel{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch;gap:.5rem;padding:.55rem}.matrix-filter-group{display:grid!important;gap:.35rem;align-content:start;min-height:92px;padding:.45rem;border:1px solid #263b54;border-radius:9px;background:#0b121c}.matrix-filter-group>b,.matrix-filter-group{color:#98a9bd;font-size:.58rem;font-weight:850;letter-spacing:.08em;text-transform:uppercase}.matrix-filter-group select{width:100%;margin-top:auto}.matrix-multiselect{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}.matrix-multiselect button{width:100%;min-height:30px;padding:.28rem .25rem;white-space:nowrap}.matrix-advanced-panel p{grid-column:1/-1;padding:.05rem .2rem}@media(max-width:700px){.matrix-advanced-panel{grid-template-columns:repeat(2,minmax(0,1fr))}.matrix-filter-group{min-height:84px;padding:.38rem}.matrix-multiselect button{font-size:.56rem}}
+
+/* Mobile Matrix: keep every control reachable and give the grid its own natural touch scroll. */
+.matrix-page { min-width:0; width:100%; }
+.matrix-toolbar, .matrix-quick, .matrix-opportunities, .matrix-summary, .matrix-scroll { min-width:0; }
+.matrix-scroll { overflow:auto; -webkit-overflow-scrolling:touch; touch-action:pan-x pan-y; overscroll-behavior:contain; scrollbar-gutter:stable both-edges; }
+.matrix-candidate-list, .matrix-quick { -webkit-overflow-scrolling:touch; touch-action:pan-x; }
+
+@media (max-width:639px) {
+  main { min-width:0; padding: .75rem .65rem calc(1rem + env(safe-area-inset-bottom)); }
+  .matrix-page { gap:.7rem; }
+  .matrix-hero { display:block; padding:.8rem .85rem; border-radius:14px; }
+  .matrix-hero h1 { font-size:1.28rem; line-height:1.08; }
+  .matrix-hero .score-label { font-size:.58rem; }
+
+  /* Four fields become two clear rows instead of tiny columns. */
+  .matrix-toolbar { grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:.55rem; padding:.65rem; }
+  .matrix-toolbar label { gap:.28rem; min-width:0; font-size:.6rem; }
+  .matrix-toolbar select { min-width:0; height:38px; padding:0 .45rem; font-size:.76rem; }
+
+  .matrix-lives { min-height:38px; padding:.45rem .55rem; font-size:.66rem; }
+  .matrix-lives span { white-space:normal; overflow:visible; text-overflow:clip; }
+
+  /* Action controls wrap into orderly rows; nothing disappears off the edge. */
+  .matrix-quick { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:.45rem; overflow:visible; }
+  .matrix-chipset { width:100%; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:2px; }
+  .matrix-chipset button { min-width:0; min-height:37px; padding:.32rem .16rem; overflow:hidden; text-overflow:ellipsis; font-size:.65rem; }
+  .matrix-clear, .matrix-advanced { width:100%; min-height:38px; margin:0; padding:.35rem .3rem; font-size:.66rem; }
+
+  .matrix-advanced-panel { grid-template-columns:1fr; gap:.5rem; padding:.55rem; }
+  .matrix-filter-group { min-height:0; padding:.55rem; }
+  .matrix-multiselect { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .matrix-multiselect button { min-height:36px; padding:.34rem; font-size:.65rem; }
+  .matrix-advanced-panel p { padding:.1rem; font-size:.62rem; line-height:1.4; }
+
+  .matrix-opportunities { align-items:flex-start; padding:.55rem; }
+  .matrix-opportunities > div:first-child { min-width:88px; }
+  .matrix-candidate-list { min-height:48px; padding-bottom:2px; }
+  .matrix-candidate-list button { min-height:42px; }
+  .matrix-summary { display:grid; grid-template-columns:auto minmax(0,1fr); align-items:start; gap:.4rem; padding:0 .15rem; font-size:.65rem; }
+  .matrix-summary span { min-width:0; white-space:normal; text-align:right; line-height:1.25; }
+  .matrix-summary button { grid-column:1/-1; margin:0; justify-self:end; }
+
+  /* A stable, app-like viewport for vertical rows and horizontal weeks. */
+  .matrix-scroll { height:clamp(300px,55dvh,520px); min-height:0; max-height:none; border-radius:12px; }
+  .matrix-table { min-width:max-content !important; }
+  .matrix-table tbody th { min-width:104px; }
+  .matrix-table td { width:62px; }
+  .matrix-table th, .matrix-table td { height:42px; }
+  .matrix-table td button { min-height:33px; padding:4px 2px; font-size:.68rem; }
+  .matrix-table thead th { height:32px; font-size:.62rem; }
+  .matrix-table tbody th b { font-size:.78rem; }
+  .matrix-table tbody th small { font-size:.54rem; }
+  .matrix-note { padding:0 .2rem; font-size:.62rem; line-height:1.4; }
+}
