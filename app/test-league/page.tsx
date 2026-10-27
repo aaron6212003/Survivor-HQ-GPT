@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
+import {apiUrl} from '@/lib/apiUrl';
 
 type Access = { code: string; token: string };
 type League = { code: string; name: string; format: string; round: number; phase: string; me: string; games: { id: string; home: string; away: string }[]; members: { id: string; name: string; commissioner: boolean; alive: boolean; points: number; submitted: number }[]; picks: { memberId: string; round: number; gameId: string; team: string }[]; results: Record<string, Record<string, string>> };
@@ -30,7 +31,7 @@ export default function TestLeague() {
     if (pending.current) return;
     pending.current = true; setBusy(true); setError(''); setNotice('');
     try {
-      const response = await fetch('/api/test-league', { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${credentials.token}` }, body: JSON.stringify({ code: credentials.code, action, ...extra }) });
+      const response = await fetch(apiUrl('/api/test-league'), { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${credentials.token}` }, body: JSON.stringify({ code: credentials.code, action, ...extra }) });
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || 'Unable to save.');
       const next = { code: data.code, token: data.token || credentials.token };

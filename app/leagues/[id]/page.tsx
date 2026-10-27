@@ -5,6 +5,7 @@ import {useParams} from 'next/navigation';
 import Link from 'next/link';
 import {useAccount} from '@/components/AccountProvider';
 import {hq} from '@/lib/hq/client';
+import {apiUrl} from '@/lib/apiUrl';
 import {panel,primary} from '@/components/LeagueConfigFields';
 import CommissionerPanel from '@/components/CommissionerPanel';
 import EntryPicker from '@/components/EntryPicker';
@@ -45,7 +46,7 @@ export default function LeaguePage(){
  useEffect(()=>{if(league){const managed=league.entries.filter((item:any)=>league.managedEntryIds?.includes(item.id)||item.userId===league.me);if(!managed.some((item:any)=>item.id===entryId))setEntryId(managed[0]?.id||'');}},[league,entryId]);
  useEffect(()=>{if(league&&entryId){setDraft(Object.fromEntries(league.picks.filter((pick:any)=>pick.entryId===entryId&&pick.week===league.selectedWeek).map((pick:any)=>[pick.gameId,{teamId:pick.teamId}])));setTiebreakerPrediction(league.config.format==='pickem'?String(league.tiebreakers?.[`${entryId}:${league.selectedWeek}`]??''):'');setDirty(false);}},[league,entryId]);
  useEffect(()=>{if(!dirty)return;const handler=(event:BeforeUnloadEvent)=>{event.preventDefault();event.returnValue='';};window.addEventListener('beforeunload',handler);return()=>window.removeEventListener('beforeunload',handler);},[dirty]);
- useEffect(()=>{let active=true;const load=async()=>{try{const response=await fetch('/api/odds');const data=await response.json();if(active){setOdds(Array.isArray(data.games)?data.games:[]);setOddsUpdatedAt(data.updatedAt||'');}}catch{}};void load();return()=>{active=false;};},[]);
+ useEffect(()=>{let active=true;const load=async()=>{try{const response=await fetch(apiUrl('/api/odds'));const data=await response.json();if(active){setOdds(Array.isArray(data.games)?data.games:[]);setOddsUpdatedAt(data.updatedAt||'');}}catch{}};void load();return()=>{active=false;};},[]);
  useEffect(()=>{if(!league||dirty)return;const timer=setInterval(()=>{if(document.visibilityState==='visible'&&!pending.current)void act('view');},60000);return()=>clearInterval(timer);},[league?.id,league?.selectedWeek,dirty]);
  function canLeave(){return !dirty||window.confirm('Discard your unsaved pick changes?');}
  function choose(game:any,teamId:string){
