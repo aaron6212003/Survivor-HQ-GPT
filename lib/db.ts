@@ -230,7 +230,7 @@ export function getSettings(): PoolSettings {
 
 export function getAllTeams(): NFLTeam[] {
   const data = readData();
-  return data.teams.sort((a, b) => a.conference.localeCompare(b.conference) || a.division.localeCompare(b.division) || a.name.localeCompare(b.name));
+  return [...data.teams].sort((a, b) => a.name.localeCompare(b.name));
 }
 
 export function getTeamByCode(code: string): NFLTeam | undefined {
