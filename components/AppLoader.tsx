@@ -1,2 +1,1 @@
-type Props={title?:string;detail?:string;compact?:boolean};
-export default function AppLoader({title='Getting your game day ready',detail='Loading leagues, live scores, and your picks.',compact=false}:Props){return <div className={`pickem-loader ${compact?'pickem-loader--compact':''}`} role="status" aria-live="polite"><div className="pickem-loader__field" aria-hidden="true"><i/><i/><i/><b>HQ</b></div><div><p className="score-label text-emerald-300">PICKEM HQ</p><h2>{title}</h2>{detail&&<p>{detail}</p>}</div></div>}
+export default function AppLoader(){return <div className="pickem-loader" role="status" aria-label="Loading"><div className="pickem-loader__mark" aria-hidden="true"><i/><i/><i/><i/><i/></div></div>}

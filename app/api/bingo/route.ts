@@ -42,11 +42,11 @@ export async function POST(request:Request) {
   const {client,user}=await userFor(request);const input=await request.json();const {game}=await featuredEvent(client);
   if(Date.parse(game.kickoff)<=Date.now()) throw new Error('Boards lock at kickoff.');
   const board=input?.board;
-  if(!Array.isArray(board)||board.length!==25||board[12]!=='free') throw new Error('Build a 5×5 board with the Free Space in the middle.');
-  const available=new Set(bingoCatalog(game).map((card:any)=>card.id));const chosen=board.filter((item:any)=>item!=='free');
-  if(chosen.length!==24||new Set(chosen).size!==24||chosen.some((item:any)=>!available.has(item))) throw new Error('Choose 24 different Bingo squares.');
+  if(!Array.isArray(board)||board.length!==25) throw new Error('Build a 5×5 Bingo board.');
+  const available=new Set(bingoCatalog(game).map((card:any)=>card.id));const chosen=board;
+  if(chosen.length!==25||new Set(chosen).size!==25||chosen.some((item:any)=>!available.has(item))) throw new Error('Choose 25 different Bingo squares.');
   const teamCounts={home:chosen.filter((id:any)=>id.startsWith('home:')).length,away:chosen.filter((id:any)=>id.startsWith('away:')).length,game:chosen.filter((id:any)=>id.startsWith('game:')).length};
-  if(teamCounts.home<7||teamCounts.away<7||teamCounts.game<4) throw new Error('Choose at least 7 squares for each team and 4 game squares.');
+  if(teamCounts.home!==10||teamCounts.away!==10||teamCounts.game!==5) throw new Error('Choose exactly 10 squares for each team and 5 game squares.');
   const {error}=await client.from('hq_bingo_boards').upsert({user_id:user.id,event_id:game.id,season:game.season,week:game.week,board,updated_at:new Date().toISOString()},{onConflict:'user_id,event_id'});
   if(error) throw new Error('Your Bingo board could not be saved.');
   let stats=null;try{stats=await liveBingoStats(game);}catch{}
