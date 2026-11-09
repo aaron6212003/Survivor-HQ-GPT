@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { CalendarRange, Filter, Search, Home, Navigation, Shield } from 'lucide-react';
 import { NFLTeam } from '@/lib/types';
+import AppLoader from '@/components/AppLoader';
 
 interface FutureScheduleRow {
   team: NFLTeam;
@@ -65,12 +66,7 @@ export default function FutureScheduleView() {
   }, []);
 
   if (loading) {
-    return (
-      <div className="flex flex-col items-center justify-center min-h-[60vh] gap-4">
-        <div className="w-12 h-12 border-4 border-emerald-500/20 border-t-emerald-500 rounded-full animate-spin" />
-        <p className="text-slate-400 font-medium text-sm animate-pulse">Loading Season Future Schedule Planning Matrix...</p>
-      </div>
-    );
+return <AppLoader/>;
   }
 
   const weeks = Array.from({ length: 18 }, (_, i) => i + 1);

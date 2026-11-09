@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { ChevronLeft, Calendar, Tv, Clock, Newspaper, ExternalLink } from 'lucide-react';
 import { NFLTeam } from '@/lib/types';
+import AppLoader from '@/components/AppLoader';
 
 interface NewsStory { title: string; source: string; publishedAt: string; url: string; }
 interface TeamResearch { weather?: { kind:string; temperature?:number; unit?:string; wind?:string; forecast?:string } | null; injuries?: { available:boolean; total?:number; players?: {player:string; position?:string; status?:string}[] }; }
@@ -94,12 +95,7 @@ export default function TeamDetailPage() {
   }, [code]);
 
   if (loading || !team) {
-    return (
-      <div className="flex flex-col items-center justify-center min-h-[50vh] gap-3">
-        <div className="w-10 h-10 border-4 border-emerald-500/20 border-t-emerald-500 rounded-full animate-spin" />
-        <p className="text-slate-400 font-medium text-xs">Loading Team Profile & Schedule...</p>
-      </div>
-    );
+return <AppLoader/>;
   }
 
   // Keep the summary tied to the exact completed games displayed below it.
@@ -165,7 +161,7 @@ export default function TeamDetailPage() {
           <div className="flex items-center gap-2"><Newspaper className="h-4 w-4 text-emerald-400" /><span className="text-xs font-extrabold uppercase tracking-wider text-slate-300">Team Pulse</span></div>
           <span className="text-[11px] font-semibold text-slate-500">Latest headlines</span>
         </div>
-        {newsLoading ? <p className="p-4 text-sm text-slate-400">Loading headlines…</p> : news.length ? <div className="divide-y divide-slate-800">{news.map((story,index)=><a key={`${story.url}-${index}`} href={story.url} target="_blank" rel="noreferrer" className="flex items-start justify-between gap-3 p-4 transition-colors hover:bg-slate-800/50"><div className="min-w-0"><p className="text-xs font-bold text-emerald-300">{story.source}{story.publishedAt ? ` · ${new Date(story.publishedAt).toLocaleDateString(undefined,{month:'short',day:'numeric'})}` : ''}</p><p className="mt-1 text-sm font-bold leading-snug text-slate-100">{story.title}</p></div><ExternalLink className="mt-1 h-4 w-4 shrink-0 text-slate-500" /></a>)}</div> : <p className="p-4 text-sm text-slate-400">No recent headlines are available right now. Try again later.</p>}
+        {newsLoading ? <AppLoader compact/> : news.length ? <div className="divide-y divide-slate-800">{news.map((story,index)=><a key={`${story.url}-${index}`} href={story.url} target="_blank" rel="noreferrer" className="flex items-start justify-between gap-3 p-4 transition-colors hover:bg-slate-800/50"><div className="min-w-0"><p className="text-xs font-bold text-emerald-300">{story.source}{story.publishedAt ? ` · ${new Date(story.publishedAt).toLocaleDateString(undefined,{month:'short',day:'numeric'})}` : ''}</p><p className="mt-1 text-sm font-bold leading-snug text-slate-100">{story.title}</p></div><ExternalLink className="mt-1 h-4 w-4 shrink-0 text-slate-500" /></a>)}</div> : <p className="p-4 text-sm text-slate-400">No recent headlines are available right now. Try again later.</p>}
         <p className="border-t border-slate-800 bg-slate-950/40 px-4 py-3 text-[11px] text-slate-500">Headlines link to their original publishers. The feed refreshes periodically to keep requests low.</p>
       </section>
 

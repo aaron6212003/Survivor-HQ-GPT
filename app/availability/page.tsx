@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { Table, Search, Shield, CheckCircle2, XCircle } from 'lucide-react';
 import { NFLTeam, SurvivorEntry } from '@/lib/types';
 import { getLocalPicks } from '@/lib/clientStore';
+import AppLoader from '@/components/AppLoader';
 
 interface AvailabilityRow {
   team: NFLTeam;
@@ -80,12 +81,7 @@ export default function TeamAvailabilityMatrix() {
   }, []);
 
   if (loading || !data) {
-    return (
-      <div className="flex flex-col items-center justify-center min-h-[50vh] gap-3">
-        <div className="w-10 h-10 border-4 border-emerald-500/20 border-t-emerald-500 rounded-full animate-spin" />
-        <p className="text-slate-400 font-medium text-xs">Loading Team Availability Matrix...</p>
-      </div>
-    );
+return <AppLoader/>;
   }
 
   const { entries, matrix } = data;

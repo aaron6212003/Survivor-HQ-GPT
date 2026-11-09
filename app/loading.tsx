@@ -1,1 +1,2 @@
-export default function Loading(){return <div className="app-loading" role="status"><div className="app-loading__mark"><i/><i/><i/></div><p className="score-label text-emerald-300">PICKEM HQ</p><h1>Getting your game day ready</h1><p>Loading leagues, live scores, and your picks.</p></div>}
+import AppLoader from '@/components/AppLoader';
+export default function Loading(){return <AppLoader/>}
