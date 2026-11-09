@@ -10,6 +10,9 @@ import {panel,primary} from '@/components/LeagueConfigFields';
 import CommissionerPanel from '@/components/CommissionerPanel';
 import EntryPicker from '@/components/EntryPicker';
 import ProfileAvatar from '@/components/ProfileAvatar';
+import AppLoader from '@/components/AppLoader';
+
+const leagueCache=new Map<string,{league:any;cachedAt:number}>();
 
 const TEAM_THEME:Record<string,[string,string]>={ARI:['#97233F','#FFB612'],ATL:['#A71930','#000'],BAL:['#241773','#9E7C0C'],BUF:['#00338D','#C60C30'],CAR:['#0085CA','#101820'],CHI:['#0B162A','#C83803'],CIN:['#FB4F14','#000'],CLE:['#311D00','#FF3C00'],DAL:['#003594','#B0B7BC'],DEN:['#FB4F14','#002244'],DET:['#0076B6','#B0B7BC'],GB:['#203731','#FFB612'],HOU:['#03202F','#A71930'],IND:['#002C5F','#A2AAAD'],JAX:['#006778','#D7A22A'],KC:['#E31837','#FFB81C'],LAC:['#0080C6','#FFC20E'],LAR:['#003594','#FFA300'],LV:['#000','#A5ACAF'],MIA:['#008E97','#FC4C02'],MIN:['#4F2683','#FFC62F'],NE:['#002244','#C60C30'],NO:['#D3BC8D','#101820'],NYG:['#0B2265','#A71930'],NYJ:['#125740','#fff'],PHI:['#004C54','#A5ACAF'],PIT:['#101820','#FFB612'],SEA:['#002244','#69BE28'],SF:['#AA0000','#B3995D'],TB:['#D50A0A','#FF7900'],TEN:['#0C2340','#4B92DB'],WAS:['#5A1414','#FFB612']};
 const teamStyle=(code:string)=>({ '--team-primary':TEAM_THEME[code]?.[0]||'#334155','--team-secondary':TEAM_THEME[code]?.[1]||'#42d89a'} as React.CSSProperties);
@@ -42,7 +45,7 @@ export default function LeaguePage(){
   catch(reason){setError(reason instanceof Error?reason.message:'Unable to update this league.');}
   finally{if(sequence===generation.current){pending.current=false;setBusy(false);}}
  }
- useEffect(()=>{let active=true;generation.current++;pending.current=false;if(session){setBusy(true);hq({action:'view',leagueId:id}).then(data=>{if(active)accept(data);}).catch(reason=>{if(active)setError(reason.message);}).finally(()=>{if(active)setBusy(false);});}return()=>{active=false;generation.current++;};},[id,session?.user.id]);
+ useEffect(()=>{let active=true;generation.current++;pending.current=false;if(session){const cached=leagueCache.get(id);if(cached&&Date.now()-cached.cachedAt<180000)accept({league:cached.league});setBusy(!cached);hq({action:'view',leagueId:id}).then(data=>{if(active){leagueCache.set(id,{league:data.league,cachedAt:Date.now()});accept(data);}}).catch(reason=>{if(active&&!cached)setError(reason.message);}).finally(()=>{if(active)setBusy(false);});}return()=>{active=false;generation.current++;};},[id,session?.user.id]);
  useEffect(()=>{if(league){const managed=league.entries.filter((item:any)=>league.managedEntryIds?.includes(item.id)||item.userId===league.me);if(!managed.some((item:any)=>item.id===entryId))setEntryId(managed[0]?.id||'');}},[league,entryId]);
  useEffect(()=>{if(league&&entryId){setDraft(Object.fromEntries(league.picks.filter((pick:any)=>pick.entryId===entryId&&pick.week===league.selectedWeek).map((pick:any)=>[pick.gameId,{teamId:pick.teamId}])));setTiebreakerPrediction(league.config.format==='pickem'?String(league.tiebreakers?.[`${entryId}:${league.selectedWeek}`]??''):'');setDirty(false);}},[league,entryId]);
  useEffect(()=>{if(!dirty)return;const handler=(event:BeforeUnloadEvent)=>{event.preventDefault();event.returnValue='';};window.addEventListener('beforeunload',handler);return()=>window.removeEventListener('beforeunload',handler);},[dirty]);
@@ -53,9 +56,9 @@ export default function LeaguePage(){
   if(busy||game.locked||league.feedStale||!entry||(!entry.alive&&survivor)||league.selectedWeek!==league.activeWeek)return;
   let next={...draft};if(next[game.id]?.teamId===teamId)delete next[game.id];else if(survivor){const limit=1;if(limit===1)next={};else if(!next[game.id]&&Object.keys(next).length>=limit){setError('Remove a selected team before choosing another.');return;}next[game.id]={teamId};}else next[game.id]={teamId};setDraft(next);setDirty(true);setMessage('');setError('');
  }
- if(loading)return <p>Loading your account…</p>;
+ if(loading)return <AppLoader compact title="Restoring your account" detail="Getting your leagues and picks ready."/>;
  if(!session)return <section className={panel}><h1 className="text-2xl font-black">Sign in to open your league</h1><Link className={`${primary} inline-block mt-5`} href={`/login?next=${encodeURIComponent('/leagues/'+id)}`}>Sign in</Link></section>;
- if(!league)return <section className={panel}>{error?<><p role="alert" className="text-rose-300">{error}</p><button className="mt-4 underline" onClick={()=>act('view')}>Retry</button></>:<p>Loading your league and NFL scores…</p>}</section>;
+ if(!league)return <section className={panel}>{error?<><p role="alert" className="text-rose-300">{error}</p><button className="mt-4 underline" onClick={()=>act('view')}>Retry</button></>:<AppLoader compact title="Opening your league" detail="Pulling in live NFL scores and your picks."/>}</section>;
  const required=survivor?1:league.games.length;const current=league.selectedWeek===league.activeWeek;const mondayGame=!survivor?[...league.games].filter((game:any)=>new Intl.DateTimeFormat('en-US',{weekday:'short',timeZone:'America/New_York'}).format(new Date(game.kickoff))==='Mon').sort((a:any,b:any)=>Date.parse(b.kickoff)-Date.parse(a.kickoff))[0]:null;const mondayPredictionLocked=!!league.tiebreakerLocked;const singleLocked=survivor&&required===1&&Object.keys(draft).some(gameId=>league.games.find((game:any)=>game.id===gameId)?.locked);
  const tabs=survivor?[['gameday','Game day'],['picks','Make picks'],['grid','Survivor grid'],['standings','Standings & picks'],['settings','Rules & settings'],['recap','Weekly recap'],['history','Season history']]:[['picks','My picks'],['standings','Standings & picks'],['settings','Rules & settings'],['recap','Weekly recap'],['history','Season history']];
  return <div className={`space-y-6 ${tab==='picks'?'league-picks-page':''}`}>
