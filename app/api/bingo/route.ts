@@ -42,8 +42,8 @@ export async function GET(request:Request) {
   const {client,user}=await userFor(request);const saved=await recentSavedEvent(client,user.id);const {game}=saved||await featuredEvent(client);
   const {data,error}=saved?{data:{board:saved.board},error:null}:await client.from('hq_bingo_boards').select('board').eq('user_id',user.id).eq('event_id',game.id).maybeSingle();
   if(error) throw new Error('Bingo storage is not configured yet.');
-  let stats=null;try{stats=await liveBingoStats(game);}catch{stats={home:{score:game.homeScore||0},away:{score:game.awayScore||0},detail:game.detail,updatedAt:null};}
-  return NextResponse.json(serialize(game,stats,Array.isArray(data?.board)?data.board:null),{headers:{'Cache-Control':'no-store'}});
+  let stats=null;let statsError='';try{stats=await liveBingoStats(game);}catch{statsError='Live game statistics are temporarily unavailable. Pull to refresh and try again.';}
+  return NextResponse.json({...serialize(game,stats,Array.isArray(data?.board)?data.board:null),statsError},{headers:{'Cache-Control':'no-store'}});
  } catch(error) {return NextResponse.json({error:error instanceof Error?error.message:'Unable to load Bingo.'},{status:400});}
 }
 
