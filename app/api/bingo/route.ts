@@ -22,15 +22,15 @@ async function featuredEvent(client:any) {
  }
  throw new Error('The next Monday Night Football matchup has not been posted yet.');
 }
-async function recentSavedEvent(client:any,userId:string) {
- const {data,error}=await client.from('hq_bingo_boards').select('event_id,season,week,board').eq('user_id',userId).order('updated_at',{ascending:false}).limit(1).maybeSingle();
+async function savedBoards(client:any,userId:string) {
+ const {data,error}=await client.from('hq_bingo_boards').select('event_id,season,week,board,updated_at').eq('user_id',userId).order('updated_at',{ascending:false});
  if(error) throw new Error('Bingo storage is not configured yet.');
- if(!data||!Array.isArray(data.board)) return null;
- const snapshot=await nflWeek(client,Number(data.season),Number(data.week));
- const game=snapshot.games.find((item:any)=>item.id===data.event_id);
- // Keep the finished board available through the following day instead of jumping to a new event overnight.
- if(!game||Date.parse(game.kickoff)>Date.now()||Date.now()-Date.parse(game.kickoff)>36*60*60_000) return null;
- return {game,board:data.board};
+ return (data||[]).filter((item:any)=>Array.isArray(item.board));
+}
+async function savedEvent(client:any,row:any) {
+ const snapshot=await nflWeek(client,Number(row.season),Number(row.week));
+ const game=snapshot.games.find((item:any)=>item.id===row.event_id);
+ return game?{game,board:row.board}:null;
 }
 function serialize(game:any,stats:any,board:string[]|null) {
  const cards=bingoCatalog(game);const completed=stats?completedCardIds(game,stats):[];const lines=board?.length===25?linesFor(board,completed):[];
@@ -39,11 +39,14 @@ function serialize(game:any,stats:any,board:string[]|null) {
 
 export async function GET(request:Request) {
  try {
-  const {client,user}=await userFor(request);const saved=await recentSavedEvent(client,user.id);const {game}=saved||await featuredEvent(client);
-  const {data,error}=saved?{data:{board:saved.board},error:null}:await client.from('hq_bingo_boards').select('board').eq('user_id',user.id).eq('event_id',game.id).maybeSingle();
-  if(error) throw new Error('Bingo storage is not configured yet.');
-  let stats=null;let statsError='';try{stats=await liveBingoStats(game);}catch{statsError='Live game statistics are temporarily unavailable. Pull to refresh and try again.';}
-  return NextResponse.json({...serialize(game,stats,Array.isArray(data?.board)?data.board:null),statsError},{headers:{'Cache-Control':'no-store'}});
+  const {client,user}=await userFor(request);const url=new URL(request.url);const boards=await savedBoards(client,user.id);const requested=url.searchParams.get('event');const recap=url.searchParams.get('recap')==='1';
+  const row=requested?boards.find((item:any)=>item.event_id===requested):boards[0];
+  const saved=row?await savedEvent(client,row):null;
+  // Events are opt-in. We never create a new Monday Night board just because the calendar changed.
+  const isRecent=saved&&Date.now()-Date.parse(saved.game.kickoff)<=36*60*60_000;
+  if(!saved||(!requested&&!recap&&!isRecent)) return NextResponse.json({event:null,cards:[],board:[],completed:[],lines:[],locked:true,updatedAt:null,statsError:'',history:boards.map((item:any)=>({eventId:item.event_id,season:item.season,week:item.week,updatedAt:item.updated_at}))},{headers:{'Cache-Control':'no-store'}});
+  let stats=null;let statsError='';try{stats=await liveBingoStats(saved.game);}catch{statsError='Live game statistics are temporarily unavailable. Pull to refresh and try again.';}
+  return NextResponse.json({...serialize(saved.game,stats,saved.board),statsError,history:boards.map((item:any)=>({eventId:item.event_id,season:item.season,week:item.week,updatedAt:item.updated_at}))},{headers:{'Cache-Control':'no-store'}});
  } catch(error) {return NextResponse.json({error:error instanceof Error?error.message:'Unable to load Bingo.'},{status:400});}
 }
 
