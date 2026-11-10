@@ -22,6 +22,16 @@ async function featuredEvent(client:any) {
  }
  throw new Error('The next Monday Night Football matchup has not been posted yet.');
 }
+async function recentSavedEvent(client:any,userId:string) {
+ const {data,error}=await client.from('hq_bingo_boards').select('event_id,season,week,board').eq('user_id',userId).order('updated_at',{ascending:false}).limit(1).maybeSingle();
+ if(error) throw new Error('Bingo storage is not configured yet.');
+ if(!data||!Array.isArray(data.board)) return null;
+ const snapshot=await nflWeek(client,Number(data.season),Number(data.week));
+ const game=snapshot.games.find((item:any)=>item.id===data.event_id);
+ // Keep the finished board available through the following day instead of jumping to a new event overnight.
+ if(!game||Date.parse(game.kickoff)>Date.now()||Date.now()-Date.parse(game.kickoff)>36*60*60_000) return null;
+ return {game,board:data.board};
+}
 function serialize(game:any,stats:any,board:string[]|null) {
  const cards=bingoCatalog(game);const completed=stats?completedCardIds(game,stats):[];const lines=board?.length===25?linesFor(board,completed):[];
  return {event:{id:game.id,season:game.season,week:game.week,kickoff:game.kickoff,home:game.home,away:game.away,status:game.status,detail:stats?.detail||game.detail},cards:cards.map((card:any)=>({id:card.id,team:card.team,label:card.label,complete:completed.includes(card.id)})),board:board||[],completed,lines,locked:Date.parse(game.kickoff)<=Date.now(),updatedAt:stats?.updatedAt||null};
@@ -29,8 +39,8 @@ function serialize(game:any,stats:any,board:string[]|null) {
 
 export async function GET(request:Request) {
  try {
-  const {client,user}=await userFor(request);const {game}=await featuredEvent(client);
-  const {data,error}=await client.from('hq_bingo_boards').select('board').eq('user_id',user.id).eq('event_id',game.id).maybeSingle();
+  const {client,user}=await userFor(request);const saved=await recentSavedEvent(client,user.id);const {game}=saved||await featuredEvent(client);
+  const {data,error}=saved?{data:{board:saved.board},error:null}:await client.from('hq_bingo_boards').select('board').eq('user_id',user.id).eq('event_id',game.id).maybeSingle();
   if(error) throw new Error('Bingo storage is not configured yet.');
   let stats=null;try{stats=await liveBingoStats(game);}catch{stats={home:{score:game.homeScore||0},away:{score:game.awayScore||0},detail:game.detail,updatedAt:null};}
   return NextResponse.json(serialize(game,stats,Array.isArray(data?.board)?data.board:null),{headers:{'Cache-Control':'no-store'}});
