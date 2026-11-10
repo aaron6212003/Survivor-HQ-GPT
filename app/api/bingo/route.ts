@@ -34,7 +34,7 @@ async function recentSavedEvent(client:any,userId:string) {
 }
 function serialize(game:any,stats:any,board:string[]|null) {
  const cards=bingoCatalog(game);const completed=stats?completedCardIds(game,stats):[];const lines=board?.length===25?linesFor(board,completed):[];
- return {event:{id:game.id,season:game.season,week:game.week,kickoff:game.kickoff,home:game.home,away:game.away,status:game.status,detail:stats?.detail||game.detail},cards:cards.map((card:any)=>({id:card.id,team:card.team,label:card.label,complete:completed.includes(card.id)})),board:board||[],completed,lines,locked:Date.parse(game.kickoff)<=Date.now(),updatedAt:stats?.updatedAt||null};
+ return {event:{id:game.id,season:game.season,week:game.week,kickoff:game.kickoff,home:game.home,away:game.away,status:stats?.final?'final':game.status,detail:stats?.detail||game.detail},cards:cards.map((card:any)=>({id:card.id,team:card.team,label:card.label,complete:completed.includes(card.id)})),board:board||[],completed,lines,locked:Date.parse(game.kickoff)<=Date.now(),updatedAt:stats?.updatedAt||null};
 }
 
 export async function GET(request:Request) {
