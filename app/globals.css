@@ -228,3 +228,5 @@ input,textarea,select,[contenteditable="true"]{-webkit-user-select:text;user-sel
 
 /* Compact, unambiguous Matrix summary for narrow phones. */
 .matrix-premium__life{min-width:100px;text-align:center}.matrix-premium__life span{display:block;white-space:nowrap;text-align:center}.matrix-option strong{display:block}.matrix-option__line{display:flex;align-items:center;justify-content:space-between;gap:.35rem}.matrix-option__line span{font-weight:900;color:#f5f7fb}@media(max-width:430px){.matrix-premium__hero{align-items:flex-start}.matrix-premium__life{flex-basis:88px;min-width:88px}.matrix-premium__life span{font-size:.58rem;letter-spacing:.06em}}
+
+.commissioner-payment{padding-bottom:calc(8rem + env(safe-area-inset-bottom));touch-action:pan-y;overscroll-behavior-y:auto}
