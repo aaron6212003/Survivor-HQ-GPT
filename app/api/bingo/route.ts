@@ -24,13 +24,21 @@ async function featuredEvent(client:any) {
 }
 async function savedBoards(client:any,userId:string) {
  const {data,error}=await client.from('hq_bingo_boards').select('event_id,season,week,board,updated_at').eq('user_id',userId).order('updated_at',{ascending:false});
- if(error) throw new Error('Bingo storage is not configured yet.');
+ // Bingo is optional. A temporary database issue must not make the entire
+ // Bingo tab unusable while there are no active events.
+ if(error) return [];
  return (data||[]).filter((item:any)=>Array.isArray(item.board));
 }
 async function savedEvent(client:any,row:any) {
- const snapshot=await nflWeek(client,Number(row.season),Number(row.week));
- const game=snapshot.games.find((item:any)=>item.id===row.event_id);
- return game?{game,board:row.board}:null;
+ try {
+  const snapshot=await nflWeek(client,Number(row.season),Number(row.week));
+  const game=snapshot.games.find((item:any)=>item.id===row.event_id);
+  return game?{game,board:row.board}:null;
+ } catch {
+  // Historical ESPN data can occasionally be unavailable. Preserve the
+  // rest of the Bingo experience and let the user try the board later.
+  return null;
+ }
 }
 function serialize(game:any,stats:any,board:string[]|null) {
  const cards=bingoCatalog(game);const completed=stats?completedCardIds(game,stats):[];const lines=board?.length===25?linesFor(board,completed):[];
