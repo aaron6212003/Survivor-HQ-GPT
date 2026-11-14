@@ -5,7 +5,7 @@ export const primary='sports-primary px-5 py-3';
 export const panel='sports-panel p-5 sm:p-6';
 export const defaults={name:'',format:'survivor',maxEntries:5,tiebreaker:'monday-total',tiesLose:true,entryFee:'',venmoLink:'',zelleContact:''};
 
-export default function LeagueConfigFields({value,onChange,existing=false}:{value:any;onChange:(v:any)=>void;existing?:boolean}) {
+export default function LeagueConfigFields({value,onChange,existing=false,showPayment=true}:{value:any;onChange:(v:any)=>void;existing?:boolean;showPayment?:boolean}) {
  const set=(key:string,next:any)=>onChange({...value,[key]:next});
  const setFormat=(format:string)=>onChange({...value,format,maxEntries:format==='survivor'?value.maxEntries||100:1,tiesLose:format==='survivor'?value.tiesLose!==false:true});
  const survivor=value.format==='survivor';
@@ -18,7 +18,7 @@ export default function LeagueConfigFields({value,onChange,existing=false}:{valu
   </div>
   <p className="rounded-xl border border-sky-900 bg-sky-950/30 p-3 text-sm text-sky-100">{survivor?'Survivor locks each matchup at its own kickoff. Thursday locks Thursday only; Sunday and Monday stay available until their own games begin.':'Straight Pick’em locks the entire weekly card at the first game kickoff, normally Thursday night. Submit every pick before then.'}</p>
   {survivor?<>
-   <section className="rounded-xl border border-slate-800 bg-slate-950/50 p-4"><b>Payment details</b><p className="mt-1 text-sm text-slate-400">Optional. Members see these while requesting lives.</p><div className="mt-3 grid gap-3 sm:grid-cols-2"><label>Cost per life<input className={field} inputMode="decimal" placeholder="Example: 25" value={value.entryFee||''} onChange={e=>set('entryFee',e.target.value)}/></label><label>Venmo payment link<input className={field} type="url" placeholder="https://venmo.com/..." value={value.venmoLink||''} onChange={e=>set('venmoLink',e.target.value)}/></label></div><label className="mt-3 block">Zelle instructions<input className={field} placeholder="Email or phone number" value={value.zelleContact||''} onChange={e=>set('zelleContact',e.target.value)}/></label></section>
+   {showPayment&&<section className="rounded-xl border border-slate-800 bg-slate-950/50 p-4"><b>Payment details</b><p className="mt-1 text-sm text-slate-400">Optional. Members see these while requesting lives.</p><div className="mt-3 grid gap-3 sm:grid-cols-2"><label>Cost per life<input className={field} inputMode="decimal" placeholder="Example: 25" value={value.entryFee||''} onChange={e=>set('entryFee',e.target.value)}/></label><label>Venmo payment link<input className={field} type="url" placeholder="https://venmo.com/..." value={value.venmoLink||''} onChange={e=>set('venmoLink',e.target.value)}/></label></div><label className="mt-3 block">Zelle instructions<input className={field} placeholder="Email or phone number" value={value.zelleContact||''} onChange={e=>set('zelleContact',e.target.value)}/></label></section>}
    <label className="flex gap-3"><input type="checkbox" checked={value.tiesLose} onChange={e=>set('tiesLose',e.target.checked)}/>A tied game eliminates the Survivor life</label>
    <p className="text-sm text-slate-500">Players choose how many lives to enter, up to this limit. Each life gets one team per week, and cannot reuse a team.</p>
   </>:<p className="text-sm text-slate-500">Every member receives one season record. Pick every game each week; correct picks build your record.</p>}
